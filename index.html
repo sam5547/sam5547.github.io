@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sameer Verma | Mechanical Engineering</title>
+  <meta name="description" content="Mechanical engineering student at the University of Cincinnati working on propulsion instrumentation, rocketry, and UAV design.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #000;
+      --card: #0f0f0f;
+      --card-hover: #1a1a1a;
+      --border: #262626;
+      --text: #fff;
+      --muted: #a3a3a3;
+      --dim: #737373;
+      --accent: #60a5fa;
+      --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+      --mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+    body { background: var(--bg); color: var(--text); font-family: var(--sans); line-height: 1.5; -webkit-font-smoothing: antialiased; }
+    ::selection { background: #262626; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    /* Nav */
+    nav { position: fixed; top: 0; width: 100%; z-index: 50; background: var(--bg); border-bottom: 1px solid rgba(255,255,255,.1); }
+    .nav-inner { max-width: 80rem; margin: 0 auto; padding: 0 1.5rem; height: 56px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: var(--mono); font-weight: 700; font-size: 1.25rem; letter-spacing: -.05em; }
+    .links { display: flex; gap: 1.5rem; }
+    .links a { font-size: .875rem; font-weight: 500; color: var(--muted); transition: color .2s; }
+    .links a:hover { color: var(--text); }
+    .menu-btn { display: none; background: none; border: 0; color: var(--muted); cursor: pointer; padding: .5rem; }
+    .menu-btn:hover { color: var(--text); }
+
+    main { max-width: 72rem; margin: 0 auto; padding: 7rem 1.5rem 5rem; }
+    section { margin-bottom: 5rem; }
+    h2 { font-size: 1.5rem; font-weight: 700; padding-bottom: .5rem; margin-bottom: 2rem; border-bottom: 1px solid var(--border); }
+
+    /* Hero */
+    .hero { display: flex; gap: 3rem; align-items: flex-start; }
+    .hero-text { flex: 1; }
+    .hero h1 { font-size: 3rem; font-weight: 700; letter-spacing: -.025em; margin-bottom: 1rem; }
+    .subtitle { font-size: 1.125rem; font-weight: 500; color: var(--muted); margin-bottom: 1.5rem; }
+    .subtitle a { color: var(--text); }
+    .subtitle a:hover { text-decoration: underline; }
+    .bio { color: var(--muted); font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.5rem; }
+    .bio p + p { margin-top: 1rem; }
+    .bio a { text-decoration: underline; text-decoration-color: #404040; transition: text-decoration-color .2s; }
+    .bio a:hover { text-decoration-color: var(--text); }
+    .socials { display: flex; gap: 1.25rem; align-items: center; }
+    .socials a { color: var(--dim); transition: color .2s; display: flex; }
+    .socials a:hover { color: var(--text); }
+    .socials svg { width: 20px; height: 20px; }
+    .resume-btn { font-family: var(--mono); font-size: .75rem; border: 1px solid var(--border); padding: .35rem .75rem; border-radius: .375rem; color: var(--text) !important; }
+    .resume-btn:hover { background: var(--card-hover); }
+    .headshot-wrap { width: 18rem; flex-shrink: 0; }
+    .headshot { aspect-ratio: 1; border-radius: .75rem; overflow: hidden; border: 1px solid var(--border); background: var(--card); }
+    .headshot img { width: 100%; height: 100%; object-fit: cover; }
+    .email-caption { font-family: var(--mono); font-size: .75rem; color: var(--dim); text-align: center; margin-top: .5rem; }
+
+    /* Image placeholders (replace with <img> once photos are added) */
+    .placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: .25rem;
+      background: radial-gradient(circle at 30% 20%, #1f2937 0%, #0a0a0a 70%); font-family: var(--mono); color: #525252; font-size: .7rem; text-align: center; padding: .5rem; }
+    .placeholder b { font-size: 1.5rem; color: #737373; letter-spacing: -.05em; }
+
+    /* Projects */
+    .projects { display: flex; flex-direction: column; gap: 3rem; }
+    .project { display: flex; gap: 1.5rem; }
+    .thumb { width: 12rem; flex-shrink: 0; aspect-ratio: 4/3; border-radius: .5rem; overflow: hidden; border: 1px solid var(--border); background: var(--card); align-self: flex-start; }
+    .thumb img { width: 100%; height: 100%; object-fit: cover; opacity: .9; transition: opacity .2s; }
+    .project:hover .thumb img { opacity: 1; }
+    .project h3 { font-size: 1.125rem; font-weight: 700; margin-bottom: .5rem; transition: color .2s; }
+    .project:hover h3 { color: var(--accent); }
+    .meta { font-family: var(--mono); font-size: .875rem; color: var(--dim); margin-bottom: .75rem; }
+    .project p { color: var(--muted); font-size: .875rem; line-height: 1.65; margin-bottom: .75rem; max-width: 42rem; }
+    .tags { display: flex; gap: .75rem; flex-wrap: wrap; }
+    .tag { font-size: .75rem; border: 1px solid var(--border); padding: .25rem .5rem; border-radius: .25rem; color: var(--dim); }
+
+    /* Current focus grid */
+    .focus-head { text-align: center; margin-bottom: 2.5rem; }
+    .focus-head h2 { font-size: 1.875rem; border: 0; padding: 0; margin-bottom: 1rem; }
+    .focus-head p { color: var(--muted); }
+    .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+    .card { padding: 1.5rem; border-radius: 1rem; border: 1px solid var(--border); background: var(--card); transition: background .2s; }
+    .card:hover { background: var(--card-hover); }
+    .span2 { grid-column: span 2; }
+    .span3 { grid-column: span 3; }
+    .span4 { grid-column: span 4; }
+    .card h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: .25rem; }
+    .card .role { color: var(--muted); font-size: .875rem; margin-bottom: 1rem; }
+    .chips { display: flex; gap: .5rem; flex-wrap: wrap; }
+    .chip { padding: .25rem .5rem; border-radius: .375rem; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); font-size: .75rem; color: #d4d4d4; }
+    .stat { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+    .stat .big { font-size: 1.875rem; font-weight: 700; }
+    .stat .label { color: var(--muted); font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; }
+    .school { display: flex; align-items: center; gap: 1rem; }
+    .school-badge { width: 3rem; height: 3rem; flex-shrink: 0; border-radius: 50%; background: #e00122; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: .95rem; }
+    .school-info { flex: 1; min-width: 0; }
+    .school-top { display: flex; justify-content: space-between; align-items: center; gap: .5rem; margin-bottom: .25rem; }
+    .school-top h4 { font-size: 1rem; font-weight: 700; }
+    .pill { font-family: var(--mono); font-size: .75rem; color: #d4d4d4; background: #1f1f1f; border: 1px solid #404040; padding: .1rem .5rem; border-radius: 999px; white-space: nowrap; }
+    .school-info p { font-size: .8rem; color: var(--muted); }
+
+    /* Experience */
+    .exp { display: flex; flex-direction: column; gap: 2.5rem; }
+    .job-head { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: .25rem; }
+    .job-head h3 { font-size: 1.125rem; font-weight: 700; }
+    .job-sub { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; color: var(--muted); font-size: .9rem; margin-bottom: .75rem; }
+    .job-sub .when, .job-head .where { font-family: var(--mono); font-size: .8rem; color: var(--dim); }
+    .exp ul { list-style: none; display: flex; flex-direction: column; gap: .5rem; }
+    .exp li { color: var(--muted); font-size: .9rem; line-height: 1.65; padding-left: 1.25rem; position: relative; }
+    .exp li::before { content: "›"; position: absolute; left: 0; color: var(--dim); font-family: var(--mono); }
+
+    .tag-link { color: var(--text); text-transform: uppercase; font-weight: 500; transition: background .2s; }
+    .tag-link:hover { background: var(--card-hover); }
+
+    /* Project detail */
+    .case-meta { display: flex; gap: .75rem; align-items: center; flex-wrap: wrap; margin-bottom: 1rem; }
+    .meta-date { font-family: var(--mono); font-size: .8rem; color: var(--dim); }
+    .case-title { font-size: 2rem; letter-spacing: -.025em; border: 0; padding: 0; margin-bottom: .75rem; }
+    .case-summary { color: var(--muted); font-size: 1.05rem; max-width: 46rem; margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+    .case-grid { display: grid; grid-template-columns: 1fr 20rem; gap: 3rem; align-items: start; }
+    .case-main h3 { font-size: 1.125rem; font-weight: 700; margin: 2rem 0 .75rem; }
+    .case-main h3:first-child { margin-top: 0; }
+    .case-main p { color: var(--muted); font-size: .95rem; line-height: 1.75; }
+    .case-main p + p { margin-top: 1rem; }
+    .results { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .result { padding: 1.25rem; border-radius: .75rem; border: 1px solid var(--border); background: var(--card); }
+    .result strong { display: block; font-family: var(--mono); font-size: 1.5rem; margin-bottom: .25rem; }
+    .result span { color: var(--muted); font-size: .8rem; }
+    .case-side { display: flex; flex-direction: column; gap: 1.5rem; }
+    figure img { width: 100%; border-radius: .5rem; border: 1px solid var(--border); }
+    figcaption { font-family: var(--mono); font-size: .72rem; color: var(--dim); margin-top: .5rem; line-height: 1.5; }
+    .gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 2.5rem; }
+    .gallery img { aspect-ratio: 4/3; object-fit: cover; }
+
+    /* Skills */
+    .skills { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .skills h4 { font-family: var(--mono); font-size: .8rem; color: var(--dim); text-transform: uppercase; letter-spacing: .08em; margin-bottom: .75rem; }
+
+    footer { border-top: 1px solid rgba(255,255,255,.1); padding: 2rem 1.5rem; text-align: center; font-family: var(--mono); font-size: .75rem; color: var(--dim); }
+
+    @media (max-width: 767px) {
+      .links { display: none; position: absolute; top: 56px; left: 0; right: 0; flex-direction: column; gap: 0; background: var(--bg); border-bottom: 1px solid rgba(255,255,255,.1); }
+      .links.open { display: flex; }
+      .links a { padding: .9rem 1.5rem; }
+      .menu-btn { display: flex; }
+      main { padding: 5.5rem 1rem 4rem; }
+      .hero { flex-direction: column-reverse; gap: 2rem; }
+      .hero h1 { font-size: 2.25rem; }
+      .headshot-wrap { width: 100%; max-width: 18rem; }
+      .project { flex-direction: column; }
+      .thumb { width: 100%; aspect-ratio: 16/9; }
+      .grid, .skills, .case-grid, .gallery { grid-template-columns: 1fr; }
+      .case-grid { gap: 2rem; }
+      .case-title { font-size: 1.6rem; }
+      .span2, .span3, .span4 { grid-column: span 1; }
+      .school-top { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a class="logo" href="#top">Δ sverma</a>
+      <button class="menu-btn" aria-label="Menu" onclick="document.querySelector('.links').classList.toggle('open')">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+      </button>
+      <div class="links" onclick="this.classList.remove('open')">
+        <a href="#top">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="Sameer_Verma_Resume.pdf" target="_blank">Resume</a>
+        <a href="mailto:vermas7@mail.uc.edu">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Sameer Verma</h1>
+        <p class="subtitle">Mechanical Engineering at the <a href="https://www.uc.edu/" target="_blank" rel="noopener">University of Cincinnati</a></p>
+        <div class="bio">
+          <p>Hey! I'm Sameer, a mechanical engineering student at the <a href="https://ceas.uc.edu/" target="_blank" rel="noopener">University of Cincinnati</a> with a minor in mathematics. I work in UC's Gas Dynamics and Propulsion Laboratory, where I build instrumentation for rotating detonation engine testing: low-cost strain measurement systems, thermocouple signal conditioning, and Python pipelines for analyzing high-speed test data.</p>
+          <p>Outside the lab, I'm on the Cincinnati Aerospace Society's liquid propulsion team and a student engineer with the UC Rocketry Club. I was also Mechanical Design Lead for a NASA L'Space proposal team, and I'm designing an autonomous multipurpose UAV from scratch. I previously worked as a Manufacturing &amp; Quality Intern at Guerbet.</p>
+        </div>
+        <div class="socials">
+          <a href="mailto:vermas7@mail.uc.edu" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/sameerverma2/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a class="resume-btn" href="Sameer_Verma_Resume.pdf" target="_blank">Resume ↗</a>
+        </div>
+      </div>
+      <div class="headshot-wrap">
+        <div class="headshot">
+          <img src="images/headshot.jpg" alt="Sameer Verma">
+        </div>
+        <p class="email-caption">vermas7 [at] mail.uc [dot] edu</p>
+      </div>
+    </section>
+
+    <!-- Current focus -->
+    <section>
+      <div class="focus-head">
+        <h2>Current Focus</h2>
+        <p>Balancing propulsion research, rocketry, and coursework at UC.</p>
+      </div>
+      <div class="grid">
+        <div class="card span2">
+          <h3>Gas Dynamics &amp; Propulsion Lab</h3>
+          <p class="role">Undergraduate Research Assistant</p>
+          <div class="chips"><span class="chip">Rotating Detonation Engines</span><span class="chip">Strain Measurement</span><span class="chip">Modal FEA</span></div>
+        </div>
+        <div class="card span2">
+          <h3>UC Rocketry Club</h3>
+          <p class="role">Student Engineer</p>
+          <div class="chips"><span class="chip">Avionics Bay</span><span class="chip">Siemens NX</span><span class="chip">Two-Stage Vehicle</span></div>
+        </div>
+        <div class="card span3">
+          <h3>Cincinnati Aerospace Society</h3>
+          <p class="role">Propulsion Team Member</p>
+          <div class="chips"><span class="chip">Liquid Propulsion</span></div>
+        </div>
+        <div class="card stat">
+          <span class="big">May 2029</span>
+          <span class="label">Graduation</span>
+        </div>
+        <div class="card span4">
+          <div class="school">
+            <div class="school-badge">UC</div>
+            <div class="school-info">
+              <div class="school-top">
+                <h4>University of Cincinnati</h4>
+                <span class="pill">GPA: 3.36/4.0</span>
+              </div>
+              <p>BS Mechanical Engineering · Minor in Mathematics</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <h2>Selected Projects</h2>
+      <div class="projects">
+        <div class="project">
+          <div class="thumb"><img src="images/rde-enclosure-aluminum.jpg" alt="Strain measurement electronics in an aluminum enclosure"></div>
+          <div>
+            <h3><a href="#rde">Low-Cost Strain Measurement for Rotating Detonation Engines</a></h3>
+            <div class="meta">~$140 vs ~$10,000 system • 2026</div>
+            <p>Custom strain measurement system for RDE testing that cut instrumentation cost by ~98%. Paired with a Python pipeline that converts 1 MHz strain-gauge data to microstrain, filters it, and runs spectrogram analysis to correlate structural response with chamber pressure.</p>
+            <div class="tags"><span class="tag">Instrumentation</span><span class="tag">Signal Processing</span><span class="tag">Python</span><span class="tag">EMI Mitigation</span><a class="tag tag-link" href="#rde">Details ↓</a></div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="thumb"><img src="images/lspace-schedule.png" alt="L'Space project schedule"></div>
+          <div>
+            <h3>Multi-Nozzle Plume-Surface Interaction Test Fixture</h3>
+            <div class="meta">NASA L'Space NPWEE • 2026</div>
+            <p>Led mechanical design of a modular fixture with four aluminum nozzles on an adjustable X-frame, a PETG regolith tray, and an acrylic mounting plate, built to study how single-, dual-, and quad-nozzle lunar lander configurations interact with BP-1 regolith simulant.</p>
+            <div class="tags"><span class="tag">Mechanical Design</span><span class="tag">Test Fixtures</span><span class="tag">Proposal Writing</span></div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="thumb"><img src="images/uav-assembled.jpg" alt="3D-printed quadcopter with cylindrical fuselage and avionics wiring"></div>
+          <div>
+            <h3><a href="#uav">Autonomous Multipurpose UAV</a></h3>
+            <div class="meta">Fusion 360 • 2026 – Present</div>
+            <p>Modular UAV airframe designed from scratch, currently being redesigned around a removable, serviceable avionics bay. Iterated through PETG prototypes with heat-set threaded inserts for durable joints.</p>
+            <div class="tags"><span class="tag">CAD</span><span class="tag">Additive Manufacturing</span><span class="tag">Packaging &amp; Integration</span><a class="tag tag-link" href="#uav">Details ↓</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RDE detail -->
+    <section id="rde" class="case">
+      <div class="case-meta"><span class="tag">Propulsion</span><span class="tag">Instrumentation</span><span class="meta-date">2026</span></div>
+      <h2 class="case-title">RDE Structural Instrumentation</h2>
+      <p class="case-summary">A low-cost structural instrumentation and data-analysis system for rotating detonation engine testing at UC's Gas Dynamics and Propulsion Laboratory.</p>
+
+      <div class="case-grid">
+        <div class="case-main">
+          <h3>The Problem</h3>
+          <p>RDE structural measurements combine small strain signals with heat, vibration, electromagnetic interference, and high-frequency loading. The goal was a usable measurement chain at student-research scale, without relying on a conventional instrumentation package costing around $10,000.</p>
+
+          <h3>Approach</h3>
+          <p>I engineered a custom strain-measurement system for about $140 and ran modal FEA in SolidWorks to predict combustor natural frequencies and expected FFT peaks before testing. I then built a Python pipeline that converts 1 MHz strain-gauge data to microstrain, applies a Chebyshev Type II low-pass filter, and generates time-frequency spectrograms to compare structural response with chamber pressure.</p>
+          <p>Test failures drove repeated changes to shielding, grounding, amplifier placement, wiring, and high-temperature gauge bonding. The later aluminum enclosure came out of that iteration.</p>
+          <p>As a short side project, I also built an AD8421 instrumentation-amplifier circuit for the lab's thermocouples, giving ~166× gain (41 µV/°C to 6.8 mV/°C) for combustion diagnostics.</p>
+
+          <h3>Results</h3>
+          <div class="results">
+            <div class="result"><strong>~$140</strong><span>Custom strain-measurement system cost</span></div>
+            <div class="result"><strong>~98%</strong><span>Lower cost vs. a ~$10k conventional system</span></div>
+            <div class="result"><strong>1 MHz</strong><span>Strain-gauge data processed in Python</span></div>
+            <div class="result"><strong>FEA → FFT</strong><span>Structural modes predicted before sensor testing</span></div>
+          </div>
+        </div>
+        <aside class="case-side">
+          <figure><img src="images/strain-gauge.jpg" alt="Foil strain gauge in its package"><figcaption>Foil strain gauge prepared for instrumentation.</figcaption></figure>
+          <figure><img src="images/thermocouple-amp.jpg" alt="AD8421 thermocouple amplifier circuit in an enclosure with BNC connectors"><figcaption>Side project: AD8421 thermocouple amplifier (~166× gain) in its enclosure.</figcaption></figure>
+          <figure><img src="images/rde-enclosure-aluminum.jpg" alt="Electronics inside an aluminum enclosure"><figcaption>Later aluminum-enclosure iteration for improved grounding and shielding.</figcaption></figure>
+        </aside>
+      </div>
+    </section>
+
+    <!-- UAV detail -->
+    <section id="uav" class="case">
+      <div class="case-meta"><span class="tag">Personal Project</span><span class="tag">Mechanical Design</span><span class="meta-date">2026 – Present</span></div>
+      <h2 class="case-title">Autonomous Multipurpose UAV</h2>
+      <p class="case-summary">A modular quadcopter designed from scratch in Fusion 360 and built through rapid PETG prototyping, with a cylindrical fuselage and a removable avionics bay.</p>
+
+      <div class="case-grid">
+        <div class="case-main">
+          <h3>The Goal</h3>
+          <p>Build a UAV airframe that stays easy to work on. Propulsion, batteries, flight electronics, and an onboard computer all have to fit in one fuselage without sacrificing structural integrity, cooling, component retention, or center of gravity.</p>
+
+          <h3>Design</h3>
+          <p>I own the mechanical architecture and structural design. The airframe uses a printed cylindrical fuselage with four bolt-on motor arms. The electronics mount to a separate sled that slides into the fuselage, so the whole avionics stack can come out for servicing instead of being rewired in place.</p>
+          <p>Every joint uses heat-set threaded inserts rather than screws driven straight into plastic, so parts can be taken apart and reassembled repeatedly during iteration without stripping.</p>
+
+          <h3>Where It's At</h3>
+          <p>The current revision is being redesigned around the removable, serviceable avionics bay, using lessons from packaging the electronics in the first build.</p>
+        </div>
+        <aside class="case-side">
+          <figure><img src="images/uav-avionics-sled.jpg" alt="Avionics sled with flight controller stack and onboard computer"><figcaption>Avionics sled: flight controller stack and onboard computer on a printed mount.</figcaption></figure>
+          <figure><img src="images/uav-avionics-insert.jpg" alt="Avionics sled sliding into the cylindrical fuselage"><figcaption>Sled sliding into the fuselage for integration.</figcaption></figure>
+        </aside>
+      </div>
+
+      <div class="gallery">
+        <figure><img src="images/uav-overview.jpg" alt="Top view of the airframe beside its electronics"><figcaption>Airframe and electronics laid out before integration.</figcaption></figure>
+        <figure><img src="images/uav-arms-motors.jpg" alt="Three printed motor arms with motors mounted"><figcaption>Printed motor arms with motors installed and wiring routed internally.</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience">
+      <h2>Experience</h2>
+      <div class="exp">
+        <div>
+          <div class="job-head"><h3>Gas Dynamics and Propulsion Laboratory</h3><span class="where">Cincinnati, OH</span></div>
+          <div class="job-sub"><span>University of Cincinnati</span><span class="when">May 2026 – Present</span></div>
+          <ul>
+            <li>Engineered a ~$140 custom strain measurement system for rotating detonation engine testing, reducing instrumentation cost by ~98% versus a ~$10,000 conventional system.</li>
+            <li>Performed modal FEA in SolidWorks to predict combustor natural frequencies and expected FFT peak locations prior to accelerometer testing.</li>
+            <li>Built an AD8421-based thermocouple signal-conditioning circuit providing ~166× gain for combustion diagnostics.</li>
+            <li>Built a Python pipeline to convert 1 MHz strain-gauge data to microstrain, apply a Chebyshev Type II low-pass filter, and run spectrogram analysis correlating strain response with chamber pressure.</li>
+            <li>Diagnosed and mitigated SNR and EMI issues through improvements to shielding, grounding, amplifier placement, wiring, and high-temperature gauge bonding.</li>
+          </ul>
+        </div>
+        <div>
+          <div class="job-head"><h3>Guerbet</h3><span class="where">Cincinnati, OH</span></div>
+          <div class="job-sub"><span>Manufacturing &amp; Quality Intern</span><span class="when">Aug 2025 – Dec 2025</span></div>
+          <ul>
+            <li>Tested and validated OptiStar injector assemblies, troubleshooting zeroing calibration and volume discrepancy issues.</li>
+            <li>Investigated a software-driven volume discrepancy using LabVIEW, cutting root-cause analysis time by ~50%.</li>
+          </ul>
+        </div>
+        <div>
+          <div class="job-head"><h3>NASA L'Space NPWEE (Team 18)</h3><span class="where">Remote</span></div>
+          <div class="job-sub"><span>Mechanical Design Lead</span><span class="when">May 2026 – Aug 2026</span></div>
+          <ul>
+            <li>Co-authored a NASA proposal investigating plume-surface interactions between single-, dual-, and quad-nozzle lunar lander engine configurations.</li>
+            <li>Contributed to a 12-month Phase A–F technology development plan and $6,700 budget, culminating in a quad chart and New Technology Report submission.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills">
+        <div class="card"><h4>CAD &amp; Analysis</h4><div class="chips"><span class="chip">Siemens NX</span><span class="chip">SolidWorks</span><span class="chip">Fusion 360</span><span class="chip">Modal FEA</span><span class="chip">OpenRocket</span></div></div>
+        <div class="card"><h4>Programming</h4><div class="chips"><span class="chip">Python</span><span class="chip">MATLAB</span><span class="chip">Java</span><span class="chip">LabVIEW</span><span class="chip">VBA</span></div></div>
+        <div class="card"><h4>Hands-On</h4><div class="chips"><span class="chip">Soldering</span><span class="chip">Circuit Prototyping</span><span class="chip">3D Printing</span><span class="chip">Strain Gauges</span></div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2026 Sameer Verma · Cincinnati, OH</footer>
+</body>
+</html>
