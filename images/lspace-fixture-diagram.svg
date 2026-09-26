@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" font-family="Consolas, ui-monospace, monospace">
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#a3a3a3"/>
+    </marker>
+    <pattern id="regolith" width="14" height="10" patternUnits="userSpaceOnUse">
+      <rect width="14" height="10" fill="#57534e"/>
+      <circle cx="3" cy="3" r="1.6" fill="#a8a29e"/>
+      <circle cx="10" cy="7" r="1.3" fill="#78716c"/>
+    </pattern>
+    <linearGradient id="plume" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#60a5fa" stop-opacity=".45"/>
+      <stop offset="1" stop-color="#60a5fa" stop-opacity=".05"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="600" fill="#0a0a0a"/>
+  <text x="40" y="52" fill="#e5e5e5" font-size="22" font-weight="700">Multi-Nozzle PSI Test Fixture</text>
+  <text x="40" y="80" fill="#737373" font-size="15">CONCEPT SKETCH · NOT TO SCALE</text>
+  <line x1="400" y1="120" x2="400" y2="560" stroke="#262626" stroke-width="2"/>
+
+  <!-- Top view -->
+  <text x="40" y="140" fill="#a3a3a3" font-size="15" letter-spacing="2">TOP VIEW</text>
+  <g stroke="#a3a3a3" stroke-width="9" stroke-linecap="round">
+    <line x1="210" y1="345" x2="115" y2="250"/>
+    <line x1="210" y1="345" x2="305" y2="250"/>
+    <line x1="210" y1="345" x2="115" y2="440"/>
+    <line x1="210" y1="345" x2="305" y2="440"/>
+  </g>
+  <rect x="192" y="327" width="36" height="36" rx="4" fill="#262626" stroke="#d4d4d4" stroke-width="3"/>
+  <g fill="#111827" stroke="#60a5fa" stroke-width="3">
+    <circle cx="115" cy="250" r="19"/><circle cx="305" cy="250" r="19"/>
+    <circle cx="115" cy="440" r="19"/><circle cx="305" cy="440" r="19"/>
+  </g>
+  <g fill="#60a5fa">
+    <circle cx="115" cy="250" r="7"/><circle cx="305" cy="250" r="7"/>
+    <circle cx="115" cy="440" r="7"/><circle cx="305" cy="440" r="7"/>
+  </g>
+  <line x1="119" y1="200" x2="301" y2="200" stroke="#a3a3a3" stroke-width="2" marker-start="url(#ah)" marker-end="url(#ah)"/>
+  <text x="210" y="188" fill="#d4d4d4" font-size="15" text-anchor="middle">adjustable spacing</text>
+  <text x="210" y="500" fill="#737373" font-size="14" text-anchor="middle">4 aluminum nozzles on</text>
+  <text x="210" y="520" fill="#737373" font-size="14" text-anchor="middle">aluminum-tube X-frame</text>
+  <text x="210" y="545" fill="#737373" font-size="14" text-anchor="middle">1 / 2 / 4-nozzle configs</text>
+
+  <!-- Side view -->
+  <text x="430" y="140" fill="#a3a3a3" font-size="15" letter-spacing="2">SIDE VIEW</text>
+  <line x1="455" y1="205" x2="725" y2="205" stroke="#a3a3a3" stroke-width="9" stroke-linecap="round"/>
+  <!-- plumes -->
+  <path d="M506,262 L456,432 L586,432 L538,262 Z" fill="url(#plume)"/>
+  <path d="M642,262 L592,432 L722,432 L674,262 Z" fill="url(#plume)"/>
+  <!-- nozzles -->
+  <g fill="#1f2937" stroke="#60a5fa" stroke-width="3" stroke-linejoin="round">
+    <path d="M510,210 L534,210 L529,236 L540,262 L504,262 L515,236 Z"/>
+    <path d="M646,210 L670,210 L665,236 L676,262 L640,262 L651,236 Z"/>
+  </g>
+  <!-- ejecta -->
+  <g fill="#a8a29e">
+    <circle cx="470" cy="418" r="2.5"/><circle cx="458" cy="405" r="2"/><circle cx="480" cy="398" r="2"/>
+    <circle cx="575" cy="412" r="2.5"/><circle cx="590" cy="402" r="2"/><circle cx="604" cy="414" r="2.5"/>
+    <circle cx="708" cy="410" r="2.5"/><circle cx="720" cy="398" r="2"/><circle cx="696" cy="396" r="2"/>
+  </g>
+  <!-- tray -->
+  <rect x="445" y="432" width="290" height="26" fill="url(#regolith)"/>
+  <path d="M440,425 L440,470 L740,470 L740,425" fill="none" stroke="#d4d4d4" stroke-width="3"/>
+  <!-- height -->
+  <line x1="762" y1="266" x2="762" y2="428" stroke="#a3a3a3" stroke-width="2" marker-start="url(#ah)" marker-end="url(#ah)"/>
+  <text x="780" y="352" fill="#d4d4d4" font-size="15" transform="rotate(90 780 352)" text-anchor="middle">adjustable height</text>
+  <text x="590" y="330" fill="#93c5fd" font-size="14" text-anchor="middle">compressed-air plumes</text>
+  <text x="590" y="500" fill="#737373" font-size="14" text-anchor="middle">PETG tray · BP-1 regolith simulant</text>
+  <text x="590" y="525" fill="#737373" font-size="14" text-anchor="middle">tunable throttle rate</text>
+</svg>
