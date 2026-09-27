@@ -115,7 +115,6 @@
     .school-info { flex: 1; min-width: 0; }
     .school-top { display: flex; justify-content: space-between; align-items: center; gap: .5rem; margin-bottom: .25rem; }
     .school-top h4 { font-size: 1rem; font-weight: 700; }
-    .pill { font-family: var(--mono); font-size: .75rem; color: #d4d4d4; background: #1f1f1f; border: 1px solid #404040; padding: .1rem .5rem; border-radius: 999px; white-space: nowrap; }
     .school-info p { font-size: .8rem; color: var(--muted); }
 
     /* Experience */
@@ -127,6 +126,9 @@
     .exp ul { list-style: none; display: flex; flex-direction: column; gap: .5rem; }
     .exp li { color: var(--muted); font-size: .9rem; line-height: 1.65; padding-left: 1.25rem; position: relative; }
     .exp li::before { content: "›"; position: absolute; left: 0; color: var(--dim); font-family: var(--mono); }
+    .exp-summary { color: var(--muted); font-size: .9rem; line-height: 1.65; max-width: 46rem; }
+    .exp-summary a { color: var(--text); white-space: nowrap; text-decoration: underline; text-decoration-color: #404040; }
+    .exp-summary a:hover { text-decoration-color: var(--text); }
 
     .tag-link { color: var(--text); text-transform: uppercase; font-weight: 500; transition: background .2s; }
     .tag-link:hover { background: var(--card-hover); }
@@ -255,9 +257,8 @@
             <div class="school-info">
               <div class="school-top">
                 <h4>University of Cincinnati</h4>
-                <span class="pill">GPA: 3.36/4.0</span>
               </div>
-              <p>BS Mechanical Engineering · Minor in Mathematics</p>
+              <p>BS Mechanical Engineering · Minor in Mathematics · GPA 3.36</p>
             </div>
           </div>
         </div>
@@ -402,13 +403,7 @@
         <div>
           <div class="job-head"><h3>Gas Dynamics and Propulsion Laboratory</h3><span class="where">Cincinnati, OH</span></div>
           <div class="job-sub"><span>University of Cincinnati</span><span class="when">May 2026 – Present</span></div>
-          <ul>
-            <li>Engineered a ~$140 custom strain measurement system for rotating detonation engine testing, reducing instrumentation cost by ~98% versus a ~$10,000 conventional system.</li>
-            <li>Performed modal FEA in SolidWorks to predict combustor natural frequencies and expected FFT peak locations prior to accelerometer testing.</li>
-            <li>Built an AD8421-based thermocouple signal-conditioning circuit providing ~166× gain for combustion diagnostics.</li>
-            <li>Built a Python pipeline to convert 1 MHz strain-gauge data to microstrain, apply a Chebyshev Type II low-pass filter, and run spectrogram analysis correlating strain response with chamber pressure.</li>
-            <li>Diagnosed and mitigated SNR and EMI issues through improvements to shielding, grounding, amplifier placement, wiring, and high-temperature gauge bonding.</li>
-          </ul>
+          <p class="exp-summary">Instrumentation for rotating detonation engine testing: a ~$140 strain measurement system, modal FEA, a 1 MHz Python analysis pipeline, and a thermocouple amplifier. Full-time over the summer, part-time during the semester. <a href="#rde">Full write-up ↑</a></p>
         </div>
         <div>
           <div class="job-head"><h3>Guerbet</h3><span class="where">Cincinnati, OH</span></div>
@@ -421,10 +416,7 @@
         <div>
           <div class="job-head"><h3>NASA L'Space NPWEE (Team 18)</h3><span class="where">Remote</span></div>
           <div class="job-sub"><span>Mechanical Design Lead</span><span class="when">May 2026 – Aug 2026</span></div>
-          <ul>
-            <li>Co-authored a NASA proposal investigating plume-surface interactions between single-, dual-, and quad-nozzle lunar lander engine configurations.</li>
-            <li>Contributed to a 12-month Phase A–F technology development plan and $6,700 budget, culminating in a quad chart and New Technology Report submission.</li>
-          </ul>
+          <p class="exp-summary">Designed the test fixture for a 7-university team's NASA proposal to experimentally compare single- and multi-nozzle lunar plume-surface interaction. <a href="#lspace">Full write-up ↑</a></p>
         </div>
       </div>
     </section>
