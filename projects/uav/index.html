@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Autonomous Multipurpose UAV | Sameer Verma</title>
+  <meta name="description" content="A modular quadcopter I&#x27;m co-developing with Yash Kakade, designed in Fusion 360 and built through rapid PETG prototyping, with a cylindrical fuselage and a removable avionics bay.">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Sameer Verma">
+  <meta property="og:title" content="Autonomous Multipurpose UAV">
+  <meta property="og:description" content="A modular quadcopter I&#x27;m co-developing with Yash Kakade, designed in Fusion 360 and built through rapid PETG prototyping, with a cylindrical fuselage and a removable avionics bay.">
+  <meta property="og:url" content="https://sam5547.github.io/projects/uav/">
+  <meta property="og:image" content="https://sam5547.github.io/images/uav-avionics-sled.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a class="logo" href="../../">Δ sverma</a>
+      <button class="menu-btn" aria-label="Menu" onclick="document.querySelector('.links').classList.toggle('open')">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+      </button>
+      <div class="links" onclick="this.classList.remove('open')">
+        <a href="../../">Home</a>
+        <a href="../../#projects">Projects</a>
+        <a href="../../#experience">Experience</a>
+        <a href="../../#skills">Skills</a>
+        <a href="../../Sameer_Verma_Resume.pdf" target="_blank">Resume</a>
+        <a href="mailto:vermas7@mail.uc.edu">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <a class="back" href="../../#projects">← Back to projects</a>
+  <section id="uav" class="case">
+    <div class="case-meta"><span class="tag">Collaborative Project</span><span class="tag">Mechanical Design</span><span class="meta-date">2026 – Present</span></div>
+    <h2 class="case-title">Autonomous Multipurpose UAV</h2>
+    <p class="case-summary">A modular quadcopter I'm co-developing with <a href="https://itsyashk.github.io/" target="_blank" rel="noopener">Yash Kakade</a>, designed in Fusion 360 and built through rapid PETG prototyping, with a cylindrical fuselage and a removable avionics bay.</p>
+
+    <div class="case-grid">
+      <div class="case-main">
+        <h3>The Goal</h3>
+        <p>A 7-inch-class quadcopter that can carry swappable payloads, such as a camera, lidar, or environmental sensors, for different missions. It also has to stay easy to work on. Propulsion, a 6S battery, flight electronics, and a companion computer all have to fit in one fuselage without sacrificing structural integrity, cooling, component retention, or center of gravity.</p>
+
+        <h3>Design</h3>
+        <p>I own the mechanical architecture and structural design. The airframe uses a printed cylindrical fuselage with four bolt-on motor arms. The electronics mount to a separate sled that slides into the fuselage, so the whole avionics stack can come out for servicing instead of being rewired in place.</p>
+        <p>Every joint uses heat-set threaded inserts rather than screws driven straight into plastic, so parts can be taken apart and reassembled repeatedly during iteration without stripping.</p>
+
+        <h3>Software &amp; Autonomy</h3>
+        <p>Yash leads the software: a Raspberry Pi companion computer running ROS 2 alongside an ArduPilot flight controller, with telemetry, health monitoring, a hot-pluggable payload system, and a web dashboard. The flight controller stays in charge of flight safety. More on the software side at <a href="https://itsyashk.github.io/" target="_blank" rel="noopener" style="color:var(--text);text-decoration:underline;text-decoration-color:#404040">itsyashk.github.io</a>.</p>
+
+        <h3>Where It's At</h3>
+        <p>The drone has completed its first successful hover test. On the mechanical side, the current revision is being redesigned around the removable, serviceable avionics bay, using lessons from packaging the electronics in the first build.</p>
+
+        <h3>Build Specs</h3>
+        <div class="results">
+          <div class="result"><strong>7 in</strong><span>Tri-blade props on 4× EMAX 2807 1300 KV motors</span></div>
+          <div class="result"><strong>6S · 5 Ah</strong><span>LiPo pack, about 111 Wh</span></div>
+          <div class="result"><strong>F405</strong><span>SpeedyBee stack with 55 A 4-in-1 ESC, running ArduCopter</span></div>
+          <div class="result"><strong>Pi 4B</strong><span>Companion computer for autonomy and payloads</span></div>
+          <!-- TODO: fill in from the drone photo shoot, then uncomment
+          <div class="result"><strong>____ g</strong><span>All-up weight, ready to fly with battery</span></div>
+          <div class="result"><strong>____ mm</strong><span>Motor-to-motor, diagonal</span></div>
+          -->
+        </div>
+      </div>
+      <aside class="case-side">
+        <figure><img src="../../images/uav-avionics-sled.jpg" alt="Avionics sled with flight controller stack and onboard computer"><figcaption>Avionics sled: flight controller stack and onboard computer on a printed mount.</figcaption></figure>
+        <figure><img src="../../images/uav-avionics-insert.jpg" alt="Avionics sled sliding into the cylindrical fuselage"><figcaption>Sled sliding into the fuselage for integration.</figcaption></figure>
+      </aside>
+    </div>
+
+    <div class="gallery">
+      <figure><img src="../../images/uav-overview.jpg" alt="Top view of the airframe beside its electronics"><figcaption>Airframe and electronics laid out before integration.</figcaption></figure>
+      <figure><img src="../../images/uav-arms-motors.jpg" alt="Three printed motor arms with motors mounted"><figcaption>Printed motor arms with motors installed and wiring routed internally.</figcaption></figure>
+    </div>
+  </section>
+
+    <div class="next-project">
+      <a href="../../#projects">← All projects</a>
+      <a href="../rde/">Next: <strong>RDE Structural Instrumentation</strong> →</a>
+    </div>
+  </main>
+
+  <footer>© 2026 Sameer Verma · Cincinnati, OH</footer>
+</body>
+</html>

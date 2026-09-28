@@ -23,163 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #000;
-      --card: #0f0f0f;
-      --card-hover: #1a1a1a;
-      --border: #262626;
-      --text: #fff;
-      --muted: #a3a3a3;
-      --dim: #737373;
-      --accent: #60a5fa;
-      --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
-      --mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; scroll-padding-top: 72px; }
-    body { background: var(--bg); color: var(--text); font-family: var(--sans); line-height: 1.5; -webkit-font-smoothing: antialiased; }
-    ::selection { background: #262626; }
-    a { color: inherit; text-decoration: none; }
-    img { display: block; max-width: 100%; }
-
-    /* Nav */
-    nav { position: fixed; top: 0; width: 100%; z-index: 50; background: var(--bg); border-bottom: 1px solid rgba(255,255,255,.1); }
-    .nav-inner { max-width: 80rem; margin: 0 auto; padding: 0 1.5rem; height: 56px; display: flex; align-items: center; justify-content: space-between; }
-    .logo { font-family: var(--mono); font-weight: 700; font-size: 1.25rem; letter-spacing: -.05em; }
-    .links { display: flex; gap: 1.5rem; }
-    .links a { font-size: .875rem; font-weight: 500; color: var(--muted); transition: color .2s; }
-    .links a:hover { color: var(--text); }
-    .menu-btn { display: none; background: none; border: 0; color: var(--muted); cursor: pointer; padding: .5rem; }
-    .menu-btn:hover { color: var(--text); }
-
-    main { max-width: 72rem; margin: 0 auto; padding: 7rem 1.5rem 5rem; }
-    section { margin-bottom: 5rem; }
-    h2 { font-size: 1.5rem; font-weight: 700; padding-bottom: .5rem; margin-bottom: 2rem; border-bottom: 1px solid var(--border); }
-
-    /* Hero */
-    .hero { display: flex; gap: 3rem; align-items: flex-start; }
-    .hero-text { flex: 1; }
-    .hero h1 { font-size: 3rem; font-weight: 700; letter-spacing: -.025em; margin-bottom: 1rem; }
-    .subtitle { font-size: 1.125rem; font-weight: 500; color: var(--muted); margin-bottom: 1.5rem; }
-    .subtitle a { color: var(--text); }
-    .subtitle a:hover { text-decoration: underline; }
-    .bio { color: var(--muted); font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.5rem; }
-    .bio p + p { margin-top: 1rem; }
-    .bio a { text-decoration: underline; text-decoration-color: #404040; transition: text-decoration-color .2s; }
-    .bio a:hover { text-decoration-color: var(--text); }
-    .socials { display: flex; gap: 1.25rem; align-items: center; }
-    .socials a { color: var(--dim); transition: color .2s; display: flex; }
-    .socials a:hover { color: var(--text); }
-    .socials svg { width: 20px; height: 20px; }
-    .resume-btn { font-family: var(--mono); font-size: .75rem; border: 1px solid var(--border); padding: .35rem .75rem; border-radius: .375rem; color: var(--text) !important; }
-    .resume-btn:hover { background: var(--card-hover); }
-    .headshot-wrap { width: 18rem; flex-shrink: 0; }
-    .headshot { aspect-ratio: 1; border-radius: .75rem; overflow: hidden; border: 1px solid var(--border); background: var(--card); }
-    .headshot img { width: 100%; height: 100%; object-fit: cover; }
-    .email-caption { font-family: var(--mono); font-size: .75rem; color: var(--dim); text-align: center; margin-top: .5rem; }
-
-    /* Projects */
-    .projects { display: flex; flex-direction: column; gap: 3rem; }
-    .project { display: flex; gap: 1.5rem; }
-    .thumb { width: 12rem; flex-shrink: 0; aspect-ratio: 4/3; border-radius: .5rem; overflow: hidden; border: 1px solid var(--border); background: var(--card); align-self: flex-start; }
-    .thumb img { width: 100%; height: 100%; object-fit: cover; opacity: .9; transition: opacity .2s; }
-    .project:hover .thumb img { opacity: 1; }
-    .project h3 { font-size: 1.125rem; font-weight: 700; margin-bottom: .5rem; transition: color .2s; }
-    .project:hover h3 { color: var(--accent); }
-    .meta { font-family: var(--mono); font-size: .875rem; color: var(--dim); margin-bottom: .75rem; }
-    .project p { color: var(--muted); font-size: .875rem; line-height: 1.65; margin-bottom: .75rem; max-width: 42rem; }
-    .tags { display: flex; gap: .75rem; flex-wrap: wrap; }
-    .tag { font-size: .75rem; border: 1px solid var(--border); padding: .25rem .5rem; border-radius: .25rem; color: var(--dim); }
-
-    /* Current focus grid */
-    .focus-head { text-align: center; margin-bottom: 2.5rem; }
-    .focus-head h2 { font-size: 1.875rem; border: 0; padding: 0; margin-bottom: 1rem; }
-    .focus-head p { color: var(--muted); }
-    .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
-    .card { padding: 1.5rem; border-radius: 1rem; border: 1px solid var(--border); background: var(--card); transition: background .2s; }
-    .card:hover { background: var(--card-hover); }
-    .span2 { grid-column: span 2; }
-    .span3 { grid-column: span 3; }
-    .span4 { grid-column: span 4; }
-    .card h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: .25rem; }
-    .card .role { color: var(--muted); font-size: .875rem; margin-bottom: 1rem; }
-    .card-desc { color: var(--muted); font-size: .85rem; line-height: 1.6; margin: -.5rem 0 1rem; }
-    .chips { display: flex; gap: .5rem; flex-wrap: wrap; }
-    .chip { padding: .25rem .5rem; border-radius: .375rem; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); font-size: .75rem; color: #d4d4d4; }
-    .stat { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
-    .stat .big { font-size: 1.875rem; font-weight: 700; }
-    .stat .label { color: var(--muted); font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; }
-    .school { display: flex; align-items: center; gap: 1rem; }
-    .school-badge { width: 3rem; height: 3rem; flex-shrink: 0; border-radius: 50%; background: #e00122; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: .95rem; }
-    .school-info { flex: 1; min-width: 0; }
-    .school-top { display: flex; justify-content: space-between; align-items: center; gap: .5rem; margin-bottom: .25rem; }
-    .school-top h4 { font-size: 1rem; font-weight: 700; }
-    .school-info p { font-size: .8rem; color: var(--muted); }
-
-    /* Experience */
-    .exp { display: flex; flex-direction: column; gap: 2.5rem; }
-    .job-head { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: .25rem; }
-    .job-head h3 { font-size: 1.125rem; font-weight: 700; }
-    .job-sub { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; color: var(--muted); font-size: .9rem; margin-bottom: .75rem; }
-    .job-sub .when, .job-head .where { font-family: var(--mono); font-size: .8rem; color: var(--dim); }
-    .exp ul { list-style: none; display: flex; flex-direction: column; gap: .5rem; }
-    .exp li { color: var(--muted); font-size: .9rem; line-height: 1.65; padding-left: 1.25rem; position: relative; }
-    .exp li::before { content: "›"; position: absolute; left: 0; color: var(--dim); font-family: var(--mono); }
-    .exp-summary { color: var(--muted); font-size: .9rem; line-height: 1.65; max-width: 46rem; }
-    .exp-summary a { color: var(--text); white-space: nowrap; text-decoration: underline; text-decoration-color: #404040; }
-    .exp-summary a:hover { text-decoration-color: var(--text); }
-
-    .tag-link { color: var(--text); text-transform: uppercase; font-weight: 500; transition: background .2s; }
-    .tag-link:hover { background: var(--card-hover); }
-
-    /* Project detail */
-    .case-meta { display: flex; gap: .75rem; align-items: center; flex-wrap: wrap; margin-bottom: 1rem; }
-    .meta-date { font-family: var(--mono); font-size: .8rem; color: var(--dim); }
-    .case-title { font-size: 2rem; letter-spacing: -.025em; border: 0; padding: 0; margin-bottom: .75rem; }
-    .case-summary { color: var(--muted); font-size: 1.05rem; max-width: 46rem; margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
-    .case-summary a { color: var(--text); text-decoration: underline; text-decoration-color: #404040; }
-    .case-grid { display: grid; grid-template-columns: 1fr 20rem; gap: 3rem; align-items: start; }
-    .case-main h3 { font-size: 1.125rem; font-weight: 700; margin: 2rem 0 .75rem; }
-    .case-main h3:first-child { margin-top: 0; }
-    .case-main p { color: var(--muted); font-size: .95rem; line-height: 1.75; }
-    .case-main p + p { margin-top: 1rem; }
-    .results { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-    .result { padding: 1.25rem; border-radius: .75rem; border: 1px solid var(--border); background: var(--card); }
-    .result strong { display: block; font-family: var(--mono); font-size: 1.5rem; margin-bottom: .25rem; }
-    .result span { color: var(--muted); font-size: .8rem; }
-    .case-side { display: flex; flex-direction: column; gap: 1.5rem; }
-    figure img { width: 100%; border-radius: .5rem; border: 1px solid var(--border); }
-    figcaption { font-family: var(--mono); font-size: .72rem; color: var(--dim); margin-top: .5rem; line-height: 1.5; }
-    .gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 2.5rem; }
-    .gallery img { aspect-ratio: 4/3; object-fit: cover; }
-    .gallery .wide { grid-column: 1 / -1; }
-    .gallery .wide img { aspect-ratio: auto; }
-
-    /* Skills */
-    .skills { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-    .skills h4 { font-family: var(--mono); font-size: .8rem; color: var(--dim); text-transform: uppercase; letter-spacing: .08em; margin-bottom: .75rem; }
-
-    footer { border-top: 1px solid rgba(255,255,255,.1); padding: 2rem 1.5rem; text-align: center; font-family: var(--mono); font-size: .75rem; color: var(--dim); }
-
-    @media (max-width: 767px) {
-      .links { display: none; position: absolute; top: 56px; left: 0; right: 0; flex-direction: column; gap: 0; background: var(--bg); border-bottom: 1px solid rgba(255,255,255,.1); }
-      .links.open { display: flex; }
-      .links a { padding: .9rem 1.5rem; }
-      .menu-btn { display: flex; }
-      main { padding: 5.5rem 1rem 4rem; }
-      .hero { flex-direction: column-reverse; gap: 2rem; }
-      .hero h1 { font-size: 2.25rem; }
-      .headshot-wrap { width: 100%; max-width: 18rem; }
-      .project { flex-direction: column; }
-      .thumb { width: 100%; aspect-ratio: 16/9; }
-      .grid, .skills, .case-grid, .gallery { grid-template-columns: 1fr; }
-      .case-grid { gap: 2rem; }
-      .case-title { font-size: 1.6rem; }
-      .span2, .span3, .span4 { grid-column: span 1; }
-      .school-top { flex-direction: column; align-items: flex-start; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <nav>
@@ -275,180 +119,42 @@
         <div class="project">
           <div class="thumb"><img src="images/rde-enclosure-aluminum.jpg" alt="Strain measurement electronics in an aluminum enclosure"></div>
           <div>
-            <h3><a href="#rde">Low-Cost Strain Measurement for Rotating Detonation Engines</a></h3>
+            <h3><a href="projects/rde/">Low-Cost Strain Measurement for Rotating Detonation Engines</a></h3>
             <div class="meta">~$140 vs ~$10,000 system • 2026</div>
             <p>Custom strain measurement system for RDE testing that cut instrumentation cost by ~98%. Paired with a Python pipeline that converts 1 MHz strain-gauge data to microstrain, filters it, and runs spectrogram analysis to correlate structural response with chamber pressure.</p>
-            <div class="tags"><span class="tag">Instrumentation</span><span class="tag">Signal Processing</span><span class="tag">Python</span><span class="tag">EMI Mitigation</span><a class="tag tag-link" href="#rde">Details ↓</a></div>
+            <div class="tags"><span class="tag">Instrumentation</span><span class="tag">Signal Processing</span><span class="tag">Python</span><span class="tag">EMI Mitigation</span><a class="tag tag-link" href="projects/rde/">Details →</a></div>
           </div>
         </div>
 
         <div class="project">
           <div class="thumb"><img src="images/lspace-fixture-diagram.svg" alt="Concept sketch of the multi-nozzle plume-surface interaction test fixture"></div>
           <div>
-            <h3><a href="#lspace">Multi-Nozzle Plume-Surface Interaction Test Fixture</a></h3>
+            <h3><a href="projects/lspace/">Multi-Nozzle Plume-Surface Interaction Test Fixture</a></h3>
             <div class="meta">NASA L'Space NPWEE • 2026</div>
             <p>Led mechanical design of a modular fixture with four aluminum nozzles on an adjustable X-frame, a PETG regolith tray, and an acrylic mounting plate, designed to study how single-, dual-, and quad-nozzle lunar lander configurations interact with BP-1 regolith simulant.</p>
-            <div class="tags"><span class="tag">Mechanical Design</span><span class="tag">Test Fixtures</span><span class="tag">Proposal Writing</span><a class="tag tag-link" href="#lspace">Details ↓</a></div>
+            <div class="tags"><span class="tag">Mechanical Design</span><span class="tag">Test Fixtures</span><span class="tag">Proposal Writing</span><a class="tag tag-link" href="projects/lspace/">Details →</a></div>
           </div>
         </div>
 
         <div class="project">
           <div class="thumb"><img src="images/rocket-battery-holder.jpg" alt="3D-printed battery holder mounted on the rocket's avionics sled"></div>
           <div>
-            <h3><a href="#rocket">Avionics Battery Holder for a Two-Stage Rocket</a></h3>
+            <h3><a href="projects/rocket/">Avionics Battery Holder for a Two-Stage Rocket</a></h3>
             <div class="meta">UC Rocketry • Flew April 2026</div>
             <p>Designed the battery holder for the second-stage avionics bay of "Double or Nothing," UC Rocketry's two-stage rocket, in Siemens NX. It flew on the April 2026 launch, where the vehicle staged successfully.</p>
-            <div class="tags"><span class="tag">Siemens NX</span><span class="tag">Flight Hardware</span><span class="tag">OpenRocket</span><a class="tag tag-link" href="#rocket">Details ↓</a></div>
+            <div class="tags"><span class="tag">Siemens NX</span><span class="tag">Flight Hardware</span><span class="tag">OpenRocket</span><a class="tag tag-link" href="projects/rocket/">Details →</a></div>
           </div>
         </div>
 
         <div class="project">
           <div class="thumb"><img src="images/uav-assembled.jpg" alt="3D-printed quadcopter with cylindrical fuselage and avionics wiring"></div>
           <div>
-            <h3><a href="#uav">Autonomous Multipurpose UAV</a></h3>
+            <h3><a href="projects/uav/">Autonomous Multipurpose UAV</a></h3>
             <div class="meta">Fusion 360 • 2026 – Present</div>
             <p>Co-developed with <a href="https://itsyashk.github.io/" target="_blank" rel="noopener" style="text-decoration:underline;text-decoration-color:#404040">Yash Kakade</a>: I lead the mechanical side of a modular UAV airframe, currently being redesigned around a removable, serviceable avionics bay. Iterated through PETG prototypes with heat-set threaded inserts for durable joints.</p>
-            <div class="tags"><span class="tag">CAD</span><span class="tag">Additive Manufacturing</span><span class="tag">Packaging &amp; Integration</span><a class="tag tag-link" href="#uav">Details ↓</a></div>
+            <div class="tags"><span class="tag">CAD</span><span class="tag">Additive Manufacturing</span><span class="tag">Packaging &amp; Integration</span><a class="tag tag-link" href="projects/uav/">Details →</a></div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- RDE detail -->
-    <section id="rde" class="case">
-      <div class="case-meta"><span class="tag">Propulsion</span><span class="tag">Instrumentation</span><span class="meta-date">2026</span></div>
-      <h2 class="case-title">RDE Structural Instrumentation</h2>
-      <p class="case-summary">A low-cost structural instrumentation and data-analysis system for rotating detonation engine testing at UC's Gas Dynamics and Propulsion Laboratory.</p>
-
-      <div class="case-grid">
-        <div class="case-main">
-          <h3>The Problem</h3>
-          <p>RDE structural measurements combine small strain signals with heat, vibration, electromagnetic interference, and high-frequency loading. The goal was a usable measurement chain at student-research scale, without relying on a conventional instrumentation package costing around $10,000.</p>
-
-          <h3>Approach</h3>
-          <p>I engineered a custom strain-measurement system for about $140 and ran modal FEA in SolidWorks to predict combustor natural frequencies and expected FFT peaks before testing. I then built a Python pipeline that converts 1 MHz strain-gauge data to microstrain, applies a Chebyshev Type II low-pass filter, and generates time-frequency spectrograms to compare structural response with chamber pressure.</p>
-          <p>Test failures drove repeated changes to shielding, grounding, amplifier placement, wiring, and high-temperature gauge bonding. The later aluminum enclosure came out of that iteration.</p>
-          <p>As a short side project, I also built an AD8421 instrumentation-amplifier circuit for the lab's thermocouples, giving ~166× gain (41 µV/°C to 6.8 mV/°C) for combustion diagnostics.</p>
-
-          <h3>Results</h3>
-          <div class="results">
-            <div class="result"><strong>~$140</strong><span>Custom strain-measurement system cost</span></div>
-            <div class="result"><strong>~98%</strong><span>Lower cost vs. a ~$10k conventional system</span></div>
-            <div class="result"><strong>1 MHz</strong><span>Strain-gauge data processed in Python</span></div>
-            <div class="result"><strong>FEA → FFT</strong><span>Structural modes predicted before sensor testing</span></div>
-          </div>
-        </div>
-        <aside class="case-side">
-          <figure><img src="images/rde-gauge-installed.jpg" alt="Strain gauge bonded to the outer wall of the RDE combustor between welded fittings"><figcaption>Strain gauge bonded to the RDE combustor wall, leads taped down for strain relief.</figcaption></figure>
-          <figure><img src="images/rde-gauge-closeup.jpg" alt="Close-up of the small strain gauge on the combustor surface next to the welded fittings"><figcaption>Close-up of the installed gauge next to the combustor's welded fittings.</figcaption></figure>
-          <figure><img src="images/thermocouple-amp.jpg" alt="AD8421 thermocouple amplifier circuit in an enclosure with BNC connectors"><figcaption>Side project: AD8421 thermocouple amplifier (~166× gain) in its enclosure.</figcaption></figure>
-          <figure><img src="images/rde-enclosure-aluminum.jpg" alt="Electronics inside an aluminum enclosure"><figcaption>Later aluminum-enclosure iteration for improved grounding and shielding.</figcaption></figure>
-        </aside>
-      </div>
-    </section>
-
-    <!-- L'Space detail -->
-    <section id="lspace" class="case">
-      <div class="case-meta"><span class="tag">NASA L'Space NPWEE</span><span class="tag">Mechanical Design Lead</span><span class="meta-date">Summer 2026</span></div>
-      <h2 class="case-title">Multi-Nozzle Lunar Plume-Surface Interaction Test</h2>
-      <p class="case-summary">A NASA-format research proposal for the first experimental comparison of single-, dual-, and quad-nozzle plume-surface interaction on lunar regolith simulant, written by a 7-person team from 7 universities through NASA's Proposal Writing and Evaluation Experience.</p>
-
-      <div class="case-grid">
-        <div class="case-main">
-          <h3>The Problem</h3>
-          <p>When a lander fires its engines near the lunar surface, the exhaust blasts regolith outward at high speed, which can damage the lander and anything already on the ground. Future landers will use multiple engines, and simulations predict that interacting plumes can raise local ejecta mass flux by up to six times compared with a single engine. Every published PSI experiment so far has used a single nozzle, so those multi-nozzle predictions have never been checked against real data.</p>
-
-          <h3>The Proposed Experiment</h3>
-          <p>An atmospheric-pressure test rig runs four identical nozzles on regulated compressed air over a bed of BP-1 lunar simulant. The campaign steps from a single-nozzle baseline to dual- and quad-nozzle configurations, each at three spacings, across several heights and throttle settings. It measures ejecta velocity, spray angle, eroded mass, surface pressure, particle distribution, and crater shape using low-cost PIV, pressure sensors, high-speed video, and weighing, then compares the results against existing computational PSI models.</p>
-
-          <h3>My Role</h3>
-          <p>As mechanical design lead, I designed the modular test fixture: four aluminum nozzles on an adjustable aluminum-tube X-frame in a square layout, a 3D-printed PETG regolith tray, and an acrylic mounting plate. The frame lets nozzle count, spacing, and height change between runs without new hardware. It was designed to be fabricated in-house using a university machine shop and 3D printers.</p>
-          <p>I also contributed to the 12-month Phase B–F development plan, the $6,700 budget, the quad chart, and the New Technology Report. Earlier in the program, before the team settled on this concept, I was PI on one of five candidate concepts: an autonomous stabilization system for rotating detonation rocket engines.</p>
-
-          <h3>By the Numbers</h3>
-          <div class="results">
-            <div class="result"><strong>1 / 2 / 4</strong><span>Nozzle configurations, each at 3 spacings</span></div>
-            <div class="result"><strong>up to 6×</strong><span>Local ejecta mass flux increase predicted by multi-nozzle simulations</span></div>
-            <div class="result"><strong>$6,700</strong><span>Proposed budget, including $2,000 for fabrication</span></div>
-            <div class="result"><strong>12 months</strong><span>Phase B–F plan with 8 weeks of schedule margin</span></div>
-          </div>
-        </div>
-        <aside class="case-side">
-          <figure><img src="images/lspace-fixture-diagram.svg" alt="Concept sketch of the four-nozzle test fixture, top and side views"><figcaption>Concept sketch of the fixture: X-frame nozzle layout (top) and plume impingement on the regolith tray (side).</figcaption></figure>
-          <figure><img src="images/lspace-schedule.png" alt="Gantt chart of the 12-month project schedule"><figcaption>Proposal schedule: design freeze at month 3, single/dual/quad test campaigns in months 6–10, closeout by month 12.</figcaption></figure>
-        </aside>
-      </div>
-    </section>
-
-    <!-- Rocket detail -->
-    <section id="rocket" class="case">
-      <div class="case-meta"><span class="tag">UC Rocketry Club</span><span class="tag">Student Engineer</span><span class="meta-date">Spring 2026</span></div>
-      <h2 class="case-title">"Double or Nothing" Two-Stage Rocket</h2>
-      <p class="case-summary">A two-stage high-power rocket built by the UC Rocketry Club and launched on April 11, 2026. Staging worked, and the battery holder I designed for the second-stage avionics bay flew on the vehicle.</p>
-
-      <div class="case-grid">
-        <div class="case-main">
-          <h3>My Part: The Battery Holder</h3>
-          <p>The second stage's avionics bay is a narrow sled that slides into the airframe, carrying the flight computer, GPS tracker, and the batteries that power them. I designed the battery holder in Siemens NX, producing the CAD model and manufacturing drawings used to build and integrate the flight part.</p>
-
-          <h3>The Rest of the Build</h3>
-          <p>I used OpenRocket to check flight performance, trajectory, and stability as the design changed, and helped with manufacturing, assembly, testing, and launch-day preparation alongside a team of about 10–15 students.</p>
-
-          <h3>Launch</h3>
-          <p>On April 11, 2026 the rocket flew with the battery holder on board the second stage, and the first and second stages separated as planned.</p>
-          <figure style="margin-top:1.25rem"><video src="videos/rocket-rail-cam.mp4" controls playsinline preload="metadata" style="display:block;width:100%;border-radius:.5rem;border:1px solid var(--border);background:var(--card)"></video><figcaption>Liftoff from the camera mounted on the launch rail.</figcaption></figure>
-          <figure style="margin-top:1.25rem"><video src="videos/rocket-launch.mp4" controls muted playsinline preload="metadata" style="display:block;width:100%;max-width:22rem;max-height:36rem;border-radius:.5rem;border:1px solid var(--border);background:var(--card)"></video><figcaption>Launch filmed from the crowd. Stage separation at about 0:06–0:08.</figcaption></figure>
-        </div>
-        <aside class="case-side">
-          <figure><img src="images/rocket-battery-holder.jpg" alt="White 3D-printed battery holder on the avionics sled, between two circuit boards"><figcaption>The battery holder (white box) on the second-stage avionics sled.</figcaption></figure>
-          <figure><img src="images/rocket-avionics-sled.jpg" alt="Avionics sled with GPS tracker and battery holder next to the airframe"><figcaption>Second-stage avionics sled beside the second-stage airframe.</figcaption></figure>
-        </aside>
-      </div>
-
-      <div class="gallery">
-        <figure class="wide"><img src="images/rocket-layout.jpg" alt="Rocket components laid out: airframe, avionics sled, recovery gear, and nose cone"><figcaption>Second stage laid out: airframe, avionics sled, recovery gear, and nose cone.</figcaption></figure>
-        <figure class="wide"><img src="images/rocket-team.jpg" alt="UC Rocketry team holding the rocket in a field on launch day"><figcaption>The UC Rocketry team with "Double or Nothing" on launch day.</figcaption></figure>
-      </div>
-    </section>
-
-    <!-- UAV detail -->
-    <section id="uav" class="case">
-      <div class="case-meta"><span class="tag">Collaborative Project</span><span class="tag">Mechanical Design</span><span class="meta-date">2026 – Present</span></div>
-      <h2 class="case-title">Autonomous Multipurpose UAV</h2>
-      <p class="case-summary">A modular quadcopter I'm co-developing with <a href="https://itsyashk.github.io/" target="_blank" rel="noopener">Yash Kakade</a>, designed in Fusion 360 and built through rapid PETG prototyping, with a cylindrical fuselage and a removable avionics bay.</p>
-
-      <div class="case-grid">
-        <div class="case-main">
-          <h3>The Goal</h3>
-          <p>A 7-inch-class quadcopter that can carry swappable payloads, such as a camera, lidar, or environmental sensors, for different missions. It also has to stay easy to work on. Propulsion, a 6S battery, flight electronics, and a companion computer all have to fit in one fuselage without sacrificing structural integrity, cooling, component retention, or center of gravity.</p>
-
-          <h3>Design</h3>
-          <p>I own the mechanical architecture and structural design. The airframe uses a printed cylindrical fuselage with four bolt-on motor arms. The electronics mount to a separate sled that slides into the fuselage, so the whole avionics stack can come out for servicing instead of being rewired in place.</p>
-          <p>Every joint uses heat-set threaded inserts rather than screws driven straight into plastic, so parts can be taken apart and reassembled repeatedly during iteration without stripping.</p>
-
-          <h3>Software &amp; Autonomy</h3>
-          <p>Yash leads the software: a Raspberry Pi companion computer running ROS 2 alongside an ArduPilot flight controller, with telemetry, health monitoring, a hot-pluggable payload system, and a web dashboard. The flight controller stays in charge of flight safety. More on the software side at <a href="https://itsyashk.github.io/" target="_blank" rel="noopener" style="color:var(--text);text-decoration:underline;text-decoration-color:#404040">itsyashk.github.io</a>.</p>
-
-          <h3>Where It's At</h3>
-          <p>The drone has completed its first successful hover test. On the mechanical side, the current revision is being redesigned around the removable, serviceable avionics bay, using lessons from packaging the electronics in the first build.</p>
-
-          <h3>Build Specs</h3>
-          <div class="results">
-            <div class="result"><strong>7 in</strong><span>Tri-blade props on 4× EMAX 2807 1300 KV motors</span></div>
-            <div class="result"><strong>6S · 5 Ah</strong><span>LiPo pack, about 111 Wh</span></div>
-            <div class="result"><strong>F405</strong><span>SpeedyBee stack with 55 A 4-in-1 ESC, running ArduCopter</span></div>
-            <div class="result"><strong>Pi 4B</strong><span>Companion computer for autonomy and payloads</span></div>
-          </div>
-        </div>
-        <aside class="case-side">
-          <figure><img src="images/uav-avionics-sled.jpg" alt="Avionics sled with flight controller stack and onboard computer"><figcaption>Avionics sled: flight controller stack and onboard computer on a printed mount.</figcaption></figure>
-          <figure><img src="images/uav-avionics-insert.jpg" alt="Avionics sled sliding into the cylindrical fuselage"><figcaption>Sled sliding into the fuselage for integration.</figcaption></figure>
-        </aside>
-      </div>
-
-      <div class="gallery">
-        <figure><img src="images/uav-overview.jpg" alt="Top view of the airframe beside its electronics"><figcaption>Airframe and electronics laid out before integration.</figcaption></figure>
-        <figure><img src="images/uav-arms-motors.jpg" alt="Three printed motor arms with motors mounted"><figcaption>Printed motor arms with motors installed and wiring routed internally.</figcaption></figure>
       </div>
     </section>
 
@@ -459,7 +165,7 @@
         <div>
           <div class="job-head"><h3>Gas Dynamics and Propulsion Laboratory</h3><span class="where">Cincinnati, OH</span></div>
           <div class="job-sub"><span>University of Cincinnati</span><span class="when">May 2026 – Present</span></div>
-          <p class="exp-summary">Instrumentation for rotating detonation engine testing: a ~$140 strain measurement system, modal FEA, a 1 MHz Python analysis pipeline, and a thermocouple amplifier. Full-time over the summer, part-time during the semester. <a href="#rde">Full write-up ↑</a></p>
+          <p class="exp-summary">Instrumentation for rotating detonation engine testing: a ~$140 strain measurement system, modal FEA, a 1 MHz Python analysis pipeline, and a thermocouple amplifier. Full-time over the summer, part-time during the semester. <a href="projects/rde/">Full write-up →</a></p>
         </div>
         <div>
           <div class="job-head"><h3>Guerbet</h3><span class="where">Cincinnati, OH</span></div>
@@ -472,7 +178,7 @@
         <div>
           <div class="job-head"><h3>NASA L'Space NPWEE (Team 18)</h3><span class="where">Remote</span></div>
           <div class="job-sub"><span>Mechanical Design Lead</span><span class="when">May 2026 – Aug 2026</span></div>
-          <p class="exp-summary">Designed the test fixture for a 7-university team's NASA proposal to experimentally compare single- and multi-nozzle lunar plume-surface interaction. <a href="#lspace">Full write-up ↑</a></p>
+          <p class="exp-summary">Designed the test fixture for a 7-university team's NASA proposal to experimentally compare single- and multi-nozzle lunar plume-surface interaction. <a href="projects/lspace/">Full write-up →</a></p>
         </div>
       </div>
     </section>
