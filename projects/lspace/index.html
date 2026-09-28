@@ -53,7 +53,7 @@
         <div class="results" style="margin-top:1.5rem">
           <div class="result"><strong>5 mm</strong><span>Throat diameter</span></div>
           <div class="result"><strong>20 mm</strong><span>Exit diameter</span></div>
-          <div class="result"><strong>16:1</strong><span>Nozzle expansion (area) ratio</span></div>
+          <div class="result"><strong>16:1</strong><span>Expansion (area) ratio, sized for vacuum (see What I'd Change)</span></div>
           <div class="result"><strong>35° / 30°</strong><span>Converging angle / initial expansion angle</span></div>
         </div>
 
@@ -62,6 +62,10 @@
 
         <h3>How the Concept Evolved</h3>
         <p>Early in the program, the team's concept was a test inside a vacuum chamber. The final proposal moved to a rig in open air running on regulated compressed air, testing several nozzle layouts, heights, and throttle settings. The nozzle and plate hardware above was designed for that final rig.</p>
+
+        <h3>What I'd Change</h3>
+        <p>Looking back at the gas dynamics, the nozzle fits the original vacuum concept better than the final open-air rig. A 16:1 bell expands the flow to about Mach 4.5, which suits a vacuum chamber. Exhausting into open air, it would need roughly 4,000 psi of supply to expand cleanly. On regulated shop air around 100 psig, the throat still chokes and the flow goes supersonic, but it would separate from the wall near an area ratio of 3, leaving most of the bell unused and the jet unsteady.</p>
+        <p>For the open-air rig I'd resize to an expansion ratio of about 1.7:1 (a ~6.5 mm exit for the same 5 mm throat) and shrink the throat to cut air consumption. At 100 psig, each 5 mm throat would pass about 64 SCFM, over 250 SCFM for the quad configuration, far more than a typical shop compressor supplies. A throat near 2 mm brings that down to about 10 SCFM per nozzle.</p>
 
         <h3>Why It Matters</h3>
         <p>When a lander fires its engines near the Moon's surface, the exhaust blasts regolith outward at high speed, which can damage the lander and anything already on the ground. Future landers will use multiple engines, and simulations predict that interacting plumes can raise local ejecta mass flux by up to six times compared with a single engine. Every published experiment so far has used a single nozzle, so those predictions have never been checked against real data. The proposed campaign would measure ejecta velocity, spray angle, eroded mass, surface pressure, and crater shape for 1, 2, and 4 nozzles at three spacings each.</p>
