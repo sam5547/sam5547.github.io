@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Multi-Nozzle Lunar Plume-Surface Interaction Test | Sameer Verma</title>
-  <meta name="description" content="A NASA-format research proposal for the first experimental comparison of single-, dual-, and quad-nozzle plume-surface interaction on lunar regolith simulant, written by a 7-person team from 7 universities through NASA&#x27;s Proposal Writing and Evaluation Experience.">
+  <title>Multi-Nozzle Lunar Lander Test Hardware | Sameer Verma</title>
+  <meta name="description" content="Nozzle and mounting-plate design in SolidWorks for a NASA research proposal comparing single-, dual-, and quad-nozzle plume-surface interaction on lunar regolith simulant.">
   <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Sameer Verma">
-  <meta property="og:title" content="Multi-Nozzle Lunar Plume-Surface Interaction Test">
-  <meta property="og:description" content="A NASA-format research proposal for the first experimental comparison of single-, dual-, and quad-nozzle plume-surface interaction on lunar regolith simulant, written by a 7-person team from 7 universities through NASA&#x27;s Proposal Writing and Evaluation Experience.">
+  <meta property="og:title" content="Multi-Nozzle Lunar Lander Test Hardware">
+  <meta property="og:description" content="Nozzle and mounting-plate design in SolidWorks for a NASA research proposal comparing single-, dual-, and quad-nozzle plume-surface interaction on lunar regolith simulant.">
   <meta property="og:url" content="https://sam5547.github.io/projects/lspace/">
-  <meta property="og:image" content="https://sam5547.github.io/images/lspace-fixture-diagram.svg">
+  <meta property="og:image" content="https://sam5547.github.io/images/lspace-quad-mount.png">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,31 +41,44 @@
     <a class="back" href="../../#projects">← Back to projects</a>
   <section id="lspace" class="case">
     <div class="case-meta"><span class="tag">NASA L'Space NPWEE</span><span class="tag">Mechanical Design Lead</span><span class="meta-date">Summer 2026</span></div>
-    <h2 class="case-title">Multi-Nozzle Lunar Plume-Surface Interaction Test</h2>
-    <p class="case-summary">A NASA-format research proposal for the first experimental comparison of single-, dual-, and quad-nozzle plume-surface interaction on lunar regolith simulant, written by a 7-person team from 7 universities through NASA's Proposal Writing and Evaluation Experience.</p>
+    <h2 class="case-title">Multi-Nozzle Lunar Lander Test Hardware</h2>
+    <p class="case-summary">As mechanical design lead on a 7-person, 7-university team, I designed the nozzles and mounting hardware for a NASA research proposal: the first experimental comparison of how single-, dual-, and quad-engine lunar landers blast regolith. Written and submitted through NASA's L'Space Proposal Writing and Evaluation Experience.</p>
 
     <div class="case-grid">
       <div class="case-main">
-        <h3>The Problem</h3>
-        <p>When a lander fires its engines near the lunar surface, the exhaust blasts regolith outward at high speed, which can damage the lander and anything already on the ground. Future landers will use multiple engines, and simulations predict that interacting plumes can raise local ejecta mass flux by up to six times compared with a single engine. Every published PSI experiment so far has used a single nozzle, so those multi-nozzle predictions have never been checked against real data.</p>
+        <h3>The Nozzle</h3>
+        <p>I designed the nozzle in SolidWorks as a converging-diverging bell: a 12 mm inlet that narrows at 35° to a 5 mm throat, then expands along a 27 mm bell to a 20 mm exit. Compressed air accelerates through the throat and leaves as a focused jet, standing in for a lander engine's exhaust at lab scale. Every test configuration uses identical copies of this one part, so any difference in results comes from the nozzle layout, not the nozzles themselves.</p>
+        <figure style="margin-top:1.25rem"><img src="../../images/lspace-nozzle-sketch.png" alt="Dimensioned SolidWorks sketch of the nozzle profile" style="background:#fff"><figcaption>Dimensioned nozzle profile in SolidWorks (mm): 35° converging section, throat fillet, 30° initial expansion angle, bell contour to the exit.</figcaption></figure>
 
-        <h3>The Proposed Experiment</h3>
-        <p>An atmospheric-pressure test rig runs four identical nozzles on regulated compressed air over a bed of BP-1 lunar simulant. The campaign steps from a single-nozzle baseline to dual- and quad-nozzle configurations, each at three spacings, across several heights and throttle settings. It measures ejecta velocity, spray angle, eroded mass, surface pressure, particle distribution, and crater shape using low-cost PIV, pressure sensors, high-speed video, and weighing, then compares the results against existing computational PSI models.</p>
+        <div class="results" style="margin-top:1.5rem">
+          <div class="result"><strong>5 mm</strong><span>Throat diameter</span></div>
+          <div class="result"><strong>20 mm</strong><span>Exit diameter</span></div>
+          <div class="result"><strong>16:1</strong><span>Nozzle expansion (area) ratio</span></div>
+          <div class="result"><strong>35° / 30°</strong><span>Converging angle / initial expansion angle</span></div>
+        </div>
 
-        <h3>My Role</h3>
-        <p>As mechanical design lead, I designed the modular test fixture: four aluminum nozzles on an adjustable aluminum-tube X-frame in a square layout, a 3D-printed PETG regolith tray, and an acrylic mounting plate. The frame lets nozzle count, spacing, and height change between runs without new hardware. It was designed to be fabricated in-house using a university machine shop and 3D printers.</p>
-        <p>I also contributed to the 12-month Phase B–F development plan, the $6,700 budget, the quad chart, and the New Technology Report. Earlier in the program, before the team settled on this concept, I was PI on one of five candidate concepts: an autonomous stabilization system for rotating detonation rocket engines.</p>
+        <h3>Swappable Mounting Plates</h3>
+        <p>The nozzles pass through acrylic mounting plates: a bar for the dual-nozzle configuration and a square plate for the quad. Changing nozzle count or spacing means swapping in a different plate, not rebuilding the rig. The regolith sits in a 3D-printed PETG tray below. Everything was designed to be fabricated in-house with a university machine shop and 3D printers.</p>
 
-        <h3>By the Numbers</h3>
-        <div class="results">
-          <div class="result"><strong>1 / 2 / 4</strong><span>Nozzle configurations, each at 3 spacings</span></div>
-          <div class="result"><strong>up to 6×</strong><span>Local ejecta mass flux increase predicted by multi-nozzle simulations</span></div>
-          <div class="result"><strong>$6,700</strong><span>Proposed budget, including $2,000 for fabrication</span></div>
-          <div class="result"><strong>12 months</strong><span>Phase B–F plan with 8 weeks of schedule margin</span></div>
+        <h3>How the Concept Evolved</h3>
+        <p>Early in the program, the team's concept was a test inside a vacuum chamber. The final proposal moved to a rig in open air running on regulated compressed air, testing several nozzle layouts, heights, and throttle settings. The nozzle and plate hardware above was designed for that final rig.</p>
+
+        <h3>Why It Matters</h3>
+        <p>When a lander fires its engines near the Moon's surface, the exhaust blasts regolith outward at high speed, which can damage the lander and anything already on the ground. Future landers will use multiple engines, and simulations predict that interacting plumes can raise local ejecta mass flux by up to six times compared with a single engine. Every published experiment so far has used a single nozzle, so those predictions have never been checked against real data. The proposed campaign would measure ejecta velocity, spray angle, eroded mass, surface pressure, and crater shape for 1, 2, and 4 nozzles at three spacings each.</p>
+
+        <h3>The Proposal</h3>
+        <p>Beyond the hardware, I contributed to the 12-month Phase B–F development plan, the $6,700 budget, the quad chart, and the New Technology Report.</p>
+
+        <div class="result" style="margin-top:2rem">
+          <span class="tag" style="display:inline-block;margin-bottom:.75rem">My own concept · PI</span>
+          <strong style="font-family:var(--sans);font-size:1.1rem;margin-bottom:.5rem">Autonomous Multi-Wave Stabilization for Rotating Detonation Rocket Engines</strong>
+          <span style="display:block;line-height:1.65">Before settling on the lunar project, the team developed five candidate concepts, and I was PI on this one. Rotating detonation rocket engines can fall into unstable single-wave operation that increases vibration and hardware damage. I proposed a system that monitors engine stability using vibration, strain, and thermal data, and adjusts operating conditions such as fuel and oxidizer flow to hold stable multi-wave detonation. It wasn't the concept the team selected, and it connects directly to my strain-measurement work on <a href="../rde/" style="color:var(--text);text-decoration:underline;text-decoration-color:#404040">rotating detonation engines</a> at UC.</span>
         </div>
       </div>
       <aside class="case-side">
-        <figure><img src="../../images/lspace-fixture-diagram.svg" alt="Concept sketch of the four-nozzle test fixture, top and side views"><figcaption>Concept sketch of the fixture: X-frame nozzle layout (top) and plume impingement on the regolith tray (side).</figcaption></figure>
+        <figure><img src="../../images/lspace-quad-mount.png" alt="SolidWorks model of four nozzles mounted through a square plate"><figcaption>Quad-nozzle configuration: four identical nozzles through a square mounting plate.</figcaption></figure>
+        <figure><img src="../../images/lspace-dual-mount.png" alt="SolidWorks model of two nozzles mounted through a bar plate"><figcaption>Dual-nozzle configuration: same nozzles, different plate.</figcaption></figure>
+        <figure><img src="../../images/lspace-nozzle-3d.png" alt="SolidWorks model of a single converging-diverging bell nozzle"><figcaption>The nozzle, modeled in SolidWorks.</figcaption></figure>
         <figure><img src="../../images/lspace-schedule.png" alt="Gantt chart of the 12-month project schedule"><figcaption>Proposal schedule: design freeze at month 3, single/dual/quad test campaigns in months 6–10, closeout by month 12.</figcaption></figure>
       </aside>
     </div>
