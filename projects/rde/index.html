@@ -52,7 +52,6 @@
         <h3>Approach</h3>
         <p>I engineered a custom strain-measurement system for about $140 and ran modal FEA in SolidWorks to predict combustor natural frequencies and expected FFT peaks before testing. I then built a Python pipeline that converts 1 MHz strain-gauge data to microstrain, applies a Chebyshev Type II low-pass filter, and generates time-frequency spectrograms to compare structural response with chamber pressure.</p>
         <p>Test failures drove repeated changes to shielding, grounding, amplifier placement, wiring, and high-temperature gauge bonding. The later aluminum enclosure came out of that iteration.</p>
-        <p>As a short side project, I also built an AD8421 instrumentation-amplifier circuit for the lab's thermocouples, giving ~166× gain (41 µV/°C to 6.8 mV/°C) for combustion diagnostics.</p>
 
         <h3>Results</h3>
         <div class="results">
@@ -65,8 +64,32 @@
       <aside class="case-side">
         <figure><img src="../../images/rde-gauge-installed.jpg" alt="Strain gauge bonded to the outer wall of the RDE combustor between welded fittings"><figcaption>Strain gauge bonded to the RDE combustor wall, leads taped down for strain relief.</figcaption></figure>
         <figure><img src="../../images/rde-gauge-closeup.jpg" alt="Close-up of the small strain gauge on the combustor surface next to the welded fittings"><figcaption>Close-up of the installed gauge next to the combustor's welded fittings.</figcaption></figure>
-        <figure><img src="../../images/thermocouple-amp.jpg" alt="AD8421 thermocouple amplifier circuit in an enclosure with BNC connectors"><figcaption>Side project: AD8421 thermocouple amplifier (~166× gain) in its enclosure.</figcaption></figure>
         <figure><img src="../../images/rde-enclosure-aluminum.jpg" alt="Electronics inside an aluminum enclosure"><figcaption>Later aluminum-enclosure iteration for improved grounding and shielding.</figcaption></figure>
+      </aside>
+    </div>
+  </section>
+
+  <section id="tc-amp" class="case" style="margin-top:4rem;padding-top:3rem;border-top:1px solid var(--border)">
+    <div class="case-meta"><span class="tag">Side Project</span><span class="tag">Same Lab</span><span class="tag">Circuit Design</span><span class="meta-date">2026</span></div>
+    <h2 class="case-title">Thermocouple Amplifier</h2>
+    <p class="case-summary">A separate, smaller build from the strain system above: a signal-conditioning circuit for the lab's thermocouples, used for combustion diagnostics.</p>
+
+    <div class="case-grid">
+      <div class="case-main">
+        <h3>What It Is</h3>
+        <p>A thermocouple measures temperature by producing a tiny voltage, only about 41 µV for every °C. Signals that small are hard to read accurately and easily get lost in noise.</p>
+
+        <h3>What I Did</h3>
+        <p>I designed, assembled, and soldered a signal-conditioning circuit built around an AD8421 instrumentation amplifier. It boosts the thermocouple signal about 166 times, from <span style="white-space:nowrap">41 µV/°C</span> to <span style="white-space:nowrap">6.8 mV/°C</span>, so temperature changes during testing show up clearly in the recorded data. The finished board is mounted in its own enclosure with BNC connectors.</p>
+
+        <h3>Results</h3>
+        <div class="results">
+          <div class="result"><strong>~166×</strong><span>Signal gain from the AD8421 amplifier</span></div>
+          <div class="result"><strong>41 µV → 6.8 mV</strong><span>Output per °C, before and after amplification</span></div>
+        </div>
+      </div>
+      <aside class="case-side">
+        <figure><img src="../../images/thermocouple-amp.jpg" alt="AD8421 thermocouple amplifier circuit in an enclosure with BNC connectors"><figcaption>The AD8421 thermocouple amplifier board in its enclosure.</figcaption></figure>
       </aside>
     </div>
   </section>
