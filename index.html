@@ -153,6 +153,8 @@
     figcaption { font-family: var(--mono); font-size: .72rem; color: var(--dim); margin-top: .5rem; line-height: 1.5; }
     .gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 2.5rem; }
     .gallery img { aspect-ratio: 4/3; object-fit: cover; }
+    .gallery .wide { grid-column: 1 / -1; }
+    .gallery .wide img { aspect-ratio: auto; }
 
     /* Skills */
     .skills { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
@@ -402,8 +404,8 @@
       </div>
 
       <div class="gallery">
-        <figure><img src="images/rocket-layout.jpg" alt="Rocket components laid out: airframe, avionics sled, recovery gear, and nose cone"><figcaption>Second stage laid out: airframe, avionics sled, recovery gear, and nose cone.</figcaption></figure>
-        <figure><img src="images/rocket-team.jpg" alt="UC Rocketry team holding the rocket in a field on launch day"><figcaption>The UC Rocketry team with "Double or Nothing" on launch day.</figcaption></figure>
+        <figure class="wide"><img src="images/rocket-layout.jpg" alt="Rocket components laid out: airframe, avionics sled, recovery gear, and nose cone"><figcaption>Second stage laid out: airframe, avionics sled, recovery gear, and nose cone.</figcaption></figure>
+        <figure class="wide"><img src="images/rocket-team.jpg" alt="UC Rocketry team holding the rocket in a field on launch day"><figcaption>The UC Rocketry team with "Double or Nothing" on launch day.</figcaption></figure>
       </div>
     </section>
 
