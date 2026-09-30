@@ -22,13 +22,13 @@
   <meta name="twitter:image" content="https://sam5547.github.io/images/headshot.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <nav>
     <div class="nav-inner">
-      <a class="logo" href="#top">Δ sverma</a>
+      <a class="logo" href="#top">Sameer Verma</a>
       <button class="menu-btn" aria-label="Menu" onclick="document.querySelector('.links').classList.toggle('open')">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
       </button>
@@ -46,75 +46,33 @@
   <main id="top">
     <!-- Hero -->
     <section class="hero">
+      <div class="headshot"><img src="images/headshot.jpg" alt="Sameer Verma"></div>
       <div class="hero-text">
         <h1>Sameer Verma</h1>
-        <p class="subtitle">Mechanical Engineering at the <a href="https://www.uc.edu/" target="_blank" rel="noopener">University of Cincinnati</a></p>
+        <p class="subtitle">Mechanical Engineering &amp; Mathematics · <a href="https://www.uc.edu/" target="_blank" rel="noopener">University of Cincinnati</a></p>
         <div class="bio">
           <p>Hey! I'm Sameer, a mechanical engineering student at the <a href="https://ceas.uc.edu/" target="_blank" rel="noopener">University of Cincinnati</a> with a minor in mathematics. I work in UC's Gas Dynamics and Propulsion Laboratory, where I build instrumentation for rotating detonation engine testing: low-cost strain measurement systems, thermocouple signal conditioning, and Python pipelines for analyzing high-speed test data.</p>
-          <p>Outside the lab, I'm on the Cincinnati Aerospace Society's liquid propulsion team and a student engineer with the UC Rocketry Club. I was also Mechanical Design Lead for a NASA L'Space proposal team, and I'm co-developing an autonomous multipurpose UAV with <a href="https://itsyashk.github.io/" target="_blank" rel="noopener">Yash Kakade</a>. I previously worked as a Manufacturing &amp; Quality Intern at Guerbet.</p>
+          <p>I was also Mechanical Design Lead for a NASA L'Space proposal team, I'm co-developing an autonomous multipurpose UAV with <a href="https://itsyashk.github.io/" target="_blank" rel="noopener">Yash Kakade</a>, and I previously worked as a Manufacturing &amp; Quality Intern at Guerbet.</p>
         </div>
-        <div class="socials">
-          <a href="mailto:vermas7@mail.uc.edu" aria-label="Email">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-          </a>
-          <a href="https://www.linkedin.com/in/sameerverma2/" target="_blank" rel="noopener" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-          </a>
-          <a class="resume-btn" href="Sameer_Verma_Resume.pdf" target="_blank">Resume ↗</a>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="Sameer_Verma_Resume.pdf" target="_blank">Resume ↗</a>
+          <a class="btn" href="#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>Email</a>
+          <a class="btn" href="https://www.linkedin.com/in/sameerverma2/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a>
         </div>
-      </div>
-      <div class="headshot-wrap">
-        <div class="headshot">
-          <img src="images/headshot.jpg" alt="Sameer Verma">
-        </div>
-        <p class="email-caption">vermas7 [at] mail.uc [dot] edu</p>
-      </div>
-    </section>
-
-    <!-- Current focus -->
-    <section>
-      <div class="focus-head">
-        <h2>Current Focus</h2>
-        <p>Balancing propulsion research, rocketry, and coursework at UC.</p>
-      </div>
-      <div class="grid">
-        <div class="card span2">
-          <h3>Gas Dynamics &amp; Propulsion Lab</h3>
-          <p class="role">Undergraduate Research Assistant</p>
-          <div class="chips"><span class="chip">Rotating Detonation Engines</span><span class="chip">Strain Measurement</span><span class="chip">Modal FEA</span></div>
-        </div>
-        <div class="card span2">
-          <h3>UC Rocketry Club</h3>
-          <p class="role">Student Engineer</p>
-          <div class="chips"><span class="chip">Avionics Bay</span><span class="chip">Siemens NX</span><span class="chip">Two-Stage Vehicle</span></div>
-        </div>
-        <div class="card span3">
-          <h3>Cincinnati Aerospace Society</h3>
-          <p class="role">Propulsion Team Member</p>
-          <p class="card-desc">Student team designing and testing a 1 kN nitrous/ethanol liquid rocket engine.</p>
-          <div class="chips"><span class="chip">Liquid Propulsion</span><span class="chip">1 kN N₂O / Ethanol Engine</span><span class="chip">Pintle Injector</span></div>
-        </div>
-        <div class="card stat">
-          <span class="big">May 2029</span>
-          <span class="label">Graduation</span>
-        </div>
-        <div class="card span4">
-          <div class="school">
-            <div class="school-badge">UC</div>
-            <div class="school-info">
-              <div class="school-top">
-                <h4>University of Cincinnati</h4>
-              </div>
-              <p>BS Mechanical Engineering · Minor in Mathematics · GPA 3.36</p>
-            </div>
-          </div>
+        <div class="now">
+          <span class="now-label">Currently</span>
+          <ul>
+            <li><strong>Undergraduate Research Assistant</strong>, UC Gas Dynamics &amp; Propulsion Lab: rotating detonation engine instrumentation</li>
+            <li><strong>Student Engineer</strong>, UC Rocketry Club</li>
+            <li><strong>Propulsion Team Member</strong>, Cincinnati Aerospace Society: 1 kN N₂O/ethanol liquid rocket engine</li>
+          </ul>
         </div>
       </div>
     </section>
 
     <!-- Projects -->
     <section id="projects">
-      <h2>Selected Projects</h2>
+      <h2>Projects</h2>
       <div class="projects">
         <div class="project">
           <div class="thumb"><img src="images/rde-enclosure-aluminum.jpg" alt="Strain measurement electronics in an aluminum enclosure"></div>
@@ -122,17 +80,17 @@
             <h3><a href="projects/rde/">Low-Cost Strain Measurement for Rotating Detonation Engines</a></h3>
             <div class="meta">~$140 vs ~$10,000 system • 2026</div>
             <p>Custom strain measurement system for RDE testing that cut instrumentation cost by ~98%. Paired with a Python pipeline that converts 1 MHz strain-gauge data to microstrain, filters it, and runs spectrogram analysis to correlate structural response with chamber pressure.</p>
-            <div class="tags"><span class="tag">Instrumentation</span><span class="tag">Signal Processing</span><span class="tag">Python</span><span class="tag">EMI Mitigation</span><a class="tag tag-link" href="projects/rde/">Details →</a></div>
+            <div class="tags"><span class="tag">Instrumentation</span><span class="tag">Signal Processing</span><span class="tag">Python</span><span class="tag">EMI Mitigation</span><a class="tag tag-link" href="projects/rde/">View project →</a></div>
           </div>
         </div>
 
         <div class="project">
           <div class="thumb"><img src="images/lspace-quad-mount.png" alt="SolidWorks model of four nozzles mounted through a square plate"></div>
           <div>
-            <h3><a href="projects/lspace/">Multi-Nozzle Plume-Surface Interaction Test Fixture</a></h3>
+            <h3><a href="projects/lspace/">Multi-Nozzle Lunar Lander Test Hardware</a></h3>
             <div class="meta">NASA L'Space NPWEE • 2026</div>
             <p>Designed supersonic cold-flow nozzles (compressed air, not combustion) and swappable mounting plates for a NASA research proposal comparing how single-, dual-, and quad-nozzle lunar lander configurations blast BP-1 regolith simulant.</p>
-            <div class="tags"><span class="tag">SolidWorks</span><span class="tag">Nozzle Design</span><span class="tag">Proposal Writing</span><a class="tag tag-link" href="projects/lspace/">Details →</a></div>
+            <div class="tags"><span class="tag">SolidWorks</span><span class="tag">Nozzle Design</span><span class="tag">Proposal Writing</span><a class="tag tag-link" href="projects/lspace/">View project →</a></div>
           </div>
         </div>
 
@@ -142,7 +100,7 @@
             <h3><a href="projects/rocket/">Avionics Battery Holder for a Two-Stage Rocket</a></h3>
             <div class="meta">UC Rocketry • Flew April 2026</div>
             <p>Designed the battery holder for the second-stage avionics bay of "Double or Nothing," UC Rocketry's two-stage rocket, in Siemens NX. It flew on the April 2026 launch, where the vehicle staged successfully.</p>
-            <div class="tags"><span class="tag">Siemens NX</span><span class="tag">Flight Hardware</span><span class="tag">OpenRocket</span><a class="tag tag-link" href="projects/rocket/">Details →</a></div>
+            <div class="tags"><span class="tag">Siemens NX</span><span class="tag">Flight Hardware</span><span class="tag">OpenRocket</span><a class="tag tag-link" href="projects/rocket/">View project →</a></div>
           </div>
         </div>
 
@@ -151,8 +109,8 @@
           <div>
             <h3><a href="projects/uav/">Autonomous Multipurpose UAV</a></h3>
             <div class="meta">Fusion 360 • 2026 – Present</div>
-            <p>Co-developed with <a href="https://itsyashk.github.io/" target="_blank" rel="noopener" style="text-decoration:underline;text-decoration-color:#404040">Yash Kakade</a>: I lead the mechanical side of a modular UAV airframe, currently being redesigned around a removable, serviceable avionics bay. Iterated through PETG prototypes with heat-set threaded inserts for durable joints.</p>
-            <div class="tags"><span class="tag">CAD</span><span class="tag">Additive Manufacturing</span><span class="tag">Packaging &amp; Integration</span><a class="tag tag-link" href="projects/uav/">Details →</a></div>
+            <p>Co-developed with <a href="https://itsyashk.github.io/" target="_blank" rel="noopener">Yash Kakade</a>: I lead the mechanical side of a modular UAV airframe, currently being redesigned around a removable, serviceable avionics bay. Iterated through PETG prototypes with heat-set threaded inserts for durable joints.</p>
+            <div class="tags"><span class="tag">CAD</span><span class="tag">Additive Manufacturing</span><span class="tag">Packaging &amp; Integration</span><a class="tag tag-link" href="projects/uav/">View project →</a></div>
           </div>
         </div>
       </div>
@@ -160,25 +118,37 @@
 
     <!-- Experience -->
     <section id="experience">
-      <h2>Experience</h2>
+      <h2>Experience &amp; Education</h2>
       <div class="exp">
-        <div>
-          <div class="job-head"><h3>Gas Dynamics and Propulsion Laboratory</h3><span class="where">Cincinnati, OH</span></div>
-          <div class="job-sub"><span>University of Cincinnati</span><span class="when">May 2026 – Present</span></div>
-          <p class="exp-summary">Instrumentation for rotating detonation engine testing: a ~$140 strain measurement system, modal FEA, a 1 MHz Python analysis pipeline, and a thermocouple amplifier. Full-time over the summer, part-time during the semester. <a href="projects/rde/">Full write-up →</a></p>
+        <div class="exp-row">
+          <span class="exp-when">May 2026 – Present</span>
+          <div><h3>Undergraduate Research Assistant <span>· Gas Dynamics &amp; Propulsion Lab, UC</span></h3>
+          <p>Structural instrumentation for rotating detonation engine testing. Full-time summer 2026, part-time during the semester. <a class="go" href="projects/rde/">Project →</a></p></div>
         </div>
-        <div>
-          <div class="job-head"><h3>Guerbet</h3><span class="where">Cincinnati, OH</span></div>
-          <div class="job-sub"><span>Manufacturing &amp; Quality Intern</span><span class="when">Aug 2025 – Dec 2025</span></div>
-          <ul>
-            <li>Tested and validated OptiStar injector assemblies, troubleshooting zeroing calibration and volume discrepancy issues.</li>
-            <li>Investigated a software-driven volume discrepancy using LabVIEW, cutting root-cause analysis time by ~50%.</li>
-          </ul>
+        <div class="exp-row">
+          <span class="exp-when">May – Aug 2026</span>
+          <div><h3>Mechanical Design Lead <span>· NASA L'Space NPWEE (Team 18), remote</span></h3>
+          <p>Nozzle and mounting-plate design for a 7-university NASA research proposal. <a class="go" href="projects/lspace/">Project →</a></p></div>
         </div>
-        <div>
-          <div class="job-head"><h3>NASA L'Space NPWEE (Team 18)</h3><span class="where">Remote</span></div>
-          <div class="job-sub"><span>Mechanical Design Lead</span><span class="when">May 2026 – Aug 2026</span></div>
-          <p class="exp-summary">Designed the test fixture for a 7-university team's NASA proposal to experimentally compare single- and multi-nozzle lunar plume-surface interaction. <a href="projects/lspace/">Full write-up →</a></p>
+        <div class="exp-row">
+          <span class="exp-when">Jan 2026 – Present</span>
+          <div><h3>Student Engineer <span>· UC Rocketry Club</span></h3>
+          <p>Designed the second-stage avionics battery holder for a two-stage rocket that flew in April 2026. <a class="go" href="projects/rocket/">Project →</a></p></div>
+        </div>
+        <div class="exp-row">
+          <span class="exp-when">Current</span>
+          <div><h3>Propulsion Team Member <span>· Cincinnati Aerospace Society</span></h3>
+          <p>Student team designing and testing a 1 kN nitrous/ethanol liquid rocket engine with a pintle injector.</p></div>
+        </div>
+        <div class="exp-row">
+          <span class="exp-when">Aug – Dec 2025</span>
+          <div><h3>Manufacturing &amp; Quality Intern <span>· Guerbet</span></h3>
+          <p>Tested and validated OptiStar injector assemblies, and used LabVIEW to trace a software-driven volume discrepancy, cutting root-cause analysis time by ~50%.</p></div>
+        </div>
+        <div class="exp-row">
+          <span class="exp-when">Expected May 2029</span>
+          <div><h3>B.S. Mechanical Engineering, Minor in Mathematics <span>· University of Cincinnati</span></h3>
+          <p>GPA 3.36</p></div>
         </div>
       </div>
     </section>
