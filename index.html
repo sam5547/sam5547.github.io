@@ -23,7 +23,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=2026-09-30">
+  <link rel="stylesheet" href="style.css?v=2026-09-30b">
+  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
   <nav>
@@ -46,20 +47,20 @@
   <main id="top">
     <!-- Hero -->
     <section class="hero">
-      <div class="headshot"><img src="images/headshot.jpg" alt="Sameer Verma"></div>
+      <div class="headshot reveal" style="--d:0s"><img src="images/headshot.jpg" alt="Sameer Verma"></div>
       <div class="hero-text">
-        <h1>Sameer Verma</h1>
-        <p class="subtitle">Mechanical Engineering &amp; Mathematics · <a href="https://www.uc.edu/" target="_blank" rel="noopener">University of Cincinnati</a></p>
-        <div class="bio">
+        <h1 class="reveal" style="--d:.08s">Sameer Verma</h1>
+        <p class="subtitle reveal" style="--d:.16s">Mechanical Engineering &amp; Mathematics · <a href="https://www.uc.edu/" target="_blank" rel="noopener">University of Cincinnati</a></p>
+        <div class="bio reveal" style="--d:.24s">
           <p>Hey! I'm Sameer, a mechanical engineering student at the <a href="https://ceas.uc.edu/" target="_blank" rel="noopener">University of Cincinnati</a> with a minor in mathematics. I work in UC's Gas Dynamics and Propulsion Laboratory, where I build instrumentation for rotating detonation engine testing: low-cost strain measurement systems, thermocouple signal conditioning, and Python pipelines for analyzing high-speed test data.</p>
           <p>I was also Mechanical Design Lead for a NASA L'Space proposal team, I'm co-developing an autonomous multipurpose UAV with <a href="https://itsyashk.github.io/" target="_blank" rel="noopener">Yash Kakade</a>, and I previously worked as a Manufacturing &amp; Quality Intern at Guerbet.</p>
         </div>
-        <div class="hero-actions">
+        <div class="hero-actions reveal" style="--d:.32s">
           <a class="btn btn-primary" href="Sameer_Verma_Resume.pdf" target="_blank">Resume ↗</a>
           <a class="btn" href="#contact"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>Email</a>
           <a class="btn" href="https://www.linkedin.com/in/sameerverma2/" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a>
         </div>
-        <div class="now">
+        <div class="now reveal" style="--d:.4s">
           <span class="now-label">Currently</span>
           <ul>
             <li><strong>Undergraduate Research Assistant</strong>, UC Gas Dynamics &amp; Propulsion Lab: rotating detonation engine instrumentation</li>
@@ -72,9 +73,9 @@
 
     <!-- Projects -->
     <section id="projects">
-      <h2>Projects</h2>
+      <h2 class="reveal">Projects</h2>
       <div class="projects">
-        <div class="project">
+        <div class="project reveal">
           <div class="thumb"><img src="images/rde-enclosure-aluminum.jpg" alt="Strain measurement electronics in an aluminum enclosure"></div>
           <div>
             <h3><a href="projects/rde/">Low-Cost Strain Measurement for Rotating Detonation Engines</a></h3>
@@ -84,7 +85,7 @@
           </div>
         </div>
 
-        <div class="project">
+        <div class="project reveal">
           <div class="thumb"><img src="images/lspace-quad-mount.png" alt="SolidWorks model of four nozzles mounted through a square plate"></div>
           <div>
             <h3><a href="projects/lspace/">Multi-Nozzle Lunar Lander Test Hardware</a></h3>
@@ -94,7 +95,7 @@
           </div>
         </div>
 
-        <div class="project">
+        <div class="project reveal">
           <div class="thumb"><img src="images/rocket-battery-holder.jpg" alt="3D-printed battery holder mounted on the rocket's avionics sled"></div>
           <div>
             <h3><a href="projects/rocket/">Avionics Battery Holder for a Two-Stage Rocket</a></h3>
@@ -104,7 +105,7 @@
           </div>
         </div>
 
-        <div class="project">
+        <div class="project reveal">
           <div class="thumb"><img src="images/uav-assembled.jpg" alt="3D-printed quadcopter with cylindrical fuselage and avionics wiring"></div>
           <div>
             <h3><a href="projects/uav/">Autonomous Multipurpose UAV</a></h3>
@@ -118,34 +119,34 @@
 
     <!-- Experience -->
     <section id="experience">
-      <h2>Experience &amp; Education</h2>
+      <h2 class="reveal">Experience &amp; Education</h2>
       <div class="exp">
-        <div class="exp-row">
+        <div class="exp-row reveal" style="--d:0.00s">
           <span class="exp-when">May 2026 – Present</span>
           <div><h3>Undergraduate Research Assistant <span>· Gas Dynamics &amp; Propulsion Lab, UC</span></h3>
           <p>Structural instrumentation for rotating detonation engine testing. Full-time summer 2026, part-time during the semester. <a class="go" href="projects/rde/">Project →</a></p></div>
         </div>
-        <div class="exp-row">
+        <div class="exp-row reveal" style="--d:0.08s">
           <span class="exp-when">May – Aug 2026</span>
           <div><h3>Mechanical Design Lead <span>· NASA L'Space NPWEE (Team 18), remote</span></h3>
           <p>Nozzle and mounting-plate design for a 7-university NASA research proposal. <a class="go" href="projects/lspace/">Project →</a></p></div>
         </div>
-        <div class="exp-row">
+        <div class="exp-row reveal" style="--d:0.16s">
           <span class="exp-when">Jan 2026 – Present</span>
           <div><h3>Student Engineer <span>· UC Rocketry Club</span></h3>
           <p>Designed the second-stage avionics battery holder for a two-stage rocket that flew in April 2026. <a class="go" href="projects/rocket/">Project →</a></p></div>
         </div>
-        <div class="exp-row">
+        <div class="exp-row reveal" style="--d:0.00s">
           <span class="exp-when">Current</span>
           <div><h3>Propulsion Team Member <span>· Cincinnati Aerospace Society</span></h3>
           <p>Student team designing and testing a 1 kN nitrous/ethanol liquid rocket engine with a pintle injector.</p></div>
         </div>
-        <div class="exp-row">
+        <div class="exp-row reveal" style="--d:0.08s">
           <span class="exp-when">Aug – Dec 2025</span>
           <div><h3>Manufacturing &amp; Quality Intern <span>· Guerbet</span></h3>
           <p>Tested and validated OptiStar injector assemblies, and used LabVIEW to trace a software-driven volume discrepancy, cutting root-cause analysis time by ~50%.</p></div>
         </div>
-        <div class="exp-row">
+        <div class="exp-row reveal" style="--d:0.16s">
           <span class="exp-when">Expected May 2029</span>
           <div><h3>B.S. Mechanical Engineering, Minor in Mathematics <span>· University of Cincinnati</span></h3>
           <p>GPA 3.36</p></div>
@@ -155,18 +156,18 @@
 
     <!-- Skills -->
     <section id="skills">
-      <h2>Skills</h2>
+      <h2 class="reveal">Skills</h2>
       <div class="skills">
-        <div class="card"><h4>CAD &amp; Analysis</h4><div class="chips"><span class="chip">Siemens NX</span><span class="chip">SolidWorks</span><span class="chip">Fusion 360</span><span class="chip">Modal FEA</span><span class="chip">OpenRocket</span></div></div>
-        <div class="card"><h4>Programming</h4><div class="chips"><span class="chip">Python</span><span class="chip">MATLAB</span><span class="chip">Java</span><span class="chip">LabVIEW</span><span class="chip">VBA</span></div></div>
-        <div class="card"><h4>Hands-On</h4><div class="chips"><span class="chip">Soldering</span><span class="chip">Circuit Prototyping</span><span class="chip">3D Printing</span><span class="chip">Strain Gauges</span></div></div>
+        <div class="card reveal" style="--d:0.0s"><h4>CAD &amp; Analysis</h4><div class="chips"><span class="chip">Siemens NX</span><span class="chip">SolidWorks</span><span class="chip">Fusion 360</span><span class="chip">Modal FEA</span><span class="chip">OpenRocket</span></div></div>
+        <div class="card reveal" style="--d:0.1s"><h4>Programming</h4><div class="chips"><span class="chip">Python</span><span class="chip">MATLAB</span><span class="chip">Java</span><span class="chip">LabVIEW</span><span class="chip">VBA</span></div></div>
+        <div class="card reveal" style="--d:0.2s"><h4>Hands-On</h4><div class="chips"><span class="chip">Soldering</span><span class="chip">Circuit Prototyping</span><span class="chip">3D Printing</span><span class="chip">Strain Gauges</span></div></div>
       </div>
     </section>
     <!-- Contact -->
     <section id="contact">
-      <h2>Contact</h2>
+      <h2 class="reveal">Contact</h2>
       <div class="contact">
-        <div class="card">
+        <div class="card reveal" style="--d:0.0s">
           <h4>Email</h4>
           <p class="contact-value">vermas7@mail.uc.edu</p>
           <div class="contact-actions">
@@ -174,7 +175,7 @@
             <a class="resume-btn" href="mailto:vermas7@mail.uc.edu">Open in mail app ↗</a>
           </div>
         </div>
-        <div class="card">
+        <div class="card reveal" style="--d:0.1s">
           <h4>LinkedIn</h4>
           <p class="contact-value">linkedin.com/in/sameerverma2</p>
           <div class="contact-actions">
@@ -186,5 +187,15 @@
   </main>
 
   <footer>© 2026 Sameer Verma · Cincinnati, OH</footer>
+  <script>
+    (function () {
+      var els = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+      els.forEach(function (e) { io.observe(e); });
+    })();
+  </script>
 </body>
 </html>
