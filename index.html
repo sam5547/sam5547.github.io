@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=2026-09-30b">
+  <link rel="stylesheet" href="style.css?v=2026-09-30c">
   <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
@@ -73,9 +73,9 @@
 
     <!-- Projects -->
     <section id="projects">
-      <h2 class="reveal">Projects</h2>
+      <h2 class="scrub">Projects</h2>
       <div class="projects">
-        <div class="project reveal">
+        <div class="project scrub">
           <div class="thumb"><img src="images/rde-enclosure-aluminum.jpg" alt="Strain measurement electronics in an aluminum enclosure"></div>
           <div>
             <h3><a href="projects/rde/">Low-Cost Strain Measurement for Rotating Detonation Engines</a></h3>
@@ -85,7 +85,7 @@
           </div>
         </div>
 
-        <div class="project reveal">
+        <div class="project scrub">
           <div class="thumb"><img src="images/lspace-quad-mount.png" alt="SolidWorks model of four nozzles mounted through a square plate"></div>
           <div>
             <h3><a href="projects/lspace/">Multi-Nozzle Lunar Lander Test Hardware</a></h3>
@@ -95,7 +95,7 @@
           </div>
         </div>
 
-        <div class="project reveal">
+        <div class="project scrub">
           <div class="thumb"><img src="images/rocket-battery-holder.jpg" alt="3D-printed battery holder mounted on the rocket's avionics sled"></div>
           <div>
             <h3><a href="projects/rocket/">Avionics Battery Holder for a Two-Stage Rocket</a></h3>
@@ -105,7 +105,7 @@
           </div>
         </div>
 
-        <div class="project reveal">
+        <div class="project scrub">
           <div class="thumb"><img src="images/uav-assembled.jpg" alt="3D-printed quadcopter with cylindrical fuselage and avionics wiring"></div>
           <div>
             <h3><a href="projects/uav/">Autonomous Multipurpose UAV</a></h3>
@@ -119,34 +119,34 @@
 
     <!-- Experience -->
     <section id="experience">
-      <h2 class="reveal">Experience &amp; Education</h2>
+      <h2 class="scrub">Experience &amp; Education</h2>
       <div class="exp">
-        <div class="exp-row reveal" style="--d:0.00s">
+        <div class="exp-row scrub">
           <span class="exp-when">May 2026 – Present</span>
           <div><h3>Undergraduate Research Assistant <span>· Gas Dynamics &amp; Propulsion Lab, UC</span></h3>
           <p>Structural instrumentation for rotating detonation engine testing. Full-time summer 2026, part-time during the semester. <a class="go" href="projects/rde/">Project →</a></p></div>
         </div>
-        <div class="exp-row reveal" style="--d:0.08s">
+        <div class="exp-row scrub">
           <span class="exp-when">May – Aug 2026</span>
           <div><h3>Mechanical Design Lead <span>· NASA L'Space NPWEE (Team 18), remote</span></h3>
           <p>Nozzle and mounting-plate design for a 7-university NASA research proposal. <a class="go" href="projects/lspace/">Project →</a></p></div>
         </div>
-        <div class="exp-row reveal" style="--d:0.16s">
+        <div class="exp-row scrub">
           <span class="exp-when">Jan 2026 – Present</span>
           <div><h3>Student Engineer <span>· UC Rocketry Club</span></h3>
           <p>Designed the second-stage avionics battery holder for a two-stage rocket that flew in April 2026. <a class="go" href="projects/rocket/">Project →</a></p></div>
         </div>
-        <div class="exp-row reveal" style="--d:0.00s">
+        <div class="exp-row scrub">
           <span class="exp-when">Current</span>
           <div><h3>Propulsion Team Member <span>· Cincinnati Aerospace Society</span></h3>
           <p>Student team designing and testing a 1 kN nitrous/ethanol liquid rocket engine with a pintle injector.</p></div>
         </div>
-        <div class="exp-row reveal" style="--d:0.08s">
+        <div class="exp-row scrub">
           <span class="exp-when">Aug – Dec 2025</span>
           <div><h3>Manufacturing &amp; Quality Intern <span>· Guerbet</span></h3>
           <p>Tested and validated OptiStar injector assemblies, and used LabVIEW to trace a software-driven volume discrepancy, cutting root-cause analysis time by ~50%.</p></div>
         </div>
-        <div class="exp-row reveal" style="--d:0.16s">
+        <div class="exp-row scrub">
           <span class="exp-when">Expected May 2029</span>
           <div><h3>B.S. Mechanical Engineering, Minor in Mathematics <span>· University of Cincinnati</span></h3>
           <p>GPA 3.36</p></div>
@@ -156,7 +156,7 @@
 
     <!-- Skills -->
     <section id="skills">
-      <h2 class="reveal">Skills</h2>
+      <h2 class="scrub">Skills</h2>
       <div class="skills">
         <div class="card reveal" style="--d:0.0s"><h4>CAD &amp; Analysis</h4><div class="chips"><span class="chip">Siemens NX</span><span class="chip">SolidWorks</span><span class="chip">Fusion 360</span><span class="chip">Modal FEA</span><span class="chip">OpenRocket</span></div></div>
         <div class="card reveal" style="--d:0.1s"><h4>Programming</h4><div class="chips"><span class="chip">Python</span><span class="chip">MATLAB</span><span class="chip">Java</span><span class="chip">LabVIEW</span><span class="chip">VBA</span></div></div>
@@ -165,7 +165,7 @@
     </section>
     <!-- Contact -->
     <section id="contact">
-      <h2 class="reveal">Contact</h2>
+      <h2 class="scrub">Contact</h2>
       <div class="contact">
         <div class="card reveal" style="--d:0.0s">
           <h4>Email</h4>
@@ -195,6 +195,28 @@
         entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
       }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
       els.forEach(function (e) { io.observe(e); });
+    })();
+  </script>
+  <script>
+    (function () {
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var els = Array.prototype.slice.call(document.querySelectorAll('.scrub'));
+      var ease = function (t) { return 1 - Math.pow(1 - t, 3); };
+      var queued = false;
+      function update() {
+        queued = false;
+        var vh = window.innerHeight;
+        els.forEach(function (el) {
+          var top = el.getBoundingClientRect().top;
+          // 0 when the element's top is at the bottom of the screen, 1 once it has risen 45% of the screen
+          var t = Math.min(1, Math.max(0, (vh - top) / (vh * 0.45)));
+          el.style.setProperty('--p', ease(t).toFixed(3));
+        });
+      }
+      function queue() { if (!queued) { queued = true; requestAnimationFrame(update); } }
+      addEventListener('scroll', queue, { passive: true });
+      addEventListener('resize', queue);
+      update();
     })();
   </script>
 </body>

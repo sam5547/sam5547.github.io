@@ -169,3 +169,13 @@ footer { border-top: 1px solid var(--border); padding: 2rem 1.5rem; text-align: 
 @media (prefers-reduced-motion: reduce) {
   .js .reveal, .js .reveal.in, .js h2.reveal::after, .js .project.reveal .thumb img, .js .exp-row.reveal::before { opacity: 1; transform: none; transition: none; }
 }
+
+/* scroll-scrubbed motion: JS writes --p (0..1) as each element travels up the viewport */
+.js .scrub { --p: 1; }
+.js .project.scrub { opacity: calc(.25 + .75 * var(--p)); transform: translateY(calc((1 - var(--p)) * 60px)) scale(calc(.92 + .08 * var(--p))); will-change: transform, opacity; }
+.js .project.scrub .thumb img { transform: scale(calc(1.18 - .18 * var(--p))); will-change: transform; }
+.js h2.scrub::after { transform: scaleX(var(--p)); transform-origin: left; }
+.js h2.scrub { opacity: calc(.2 + .8 * var(--p)); }
+.js .exp-row.scrub { opacity: calc(.2 + .8 * var(--p)); transform: translateX(calc((1 - var(--p)) * -24px)); }
+.js .exp-row.scrub::before { transform: scale(var(--p)); }
+@media (prefers-reduced-motion: reduce) { .js .scrub { --p: 1 !important; } }
