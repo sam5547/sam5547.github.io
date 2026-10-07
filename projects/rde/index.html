@@ -53,16 +53,8 @@
         <p>Strain signals on an RDE are small and arrive alongside heat, vibration, electromagnetic interference, and high-frequency loading, so the whole measurement chain, from gauge to recorded data, has to survive the environment and stay clean enough to trust.</p>
 
         <h3>Why It Matters</h3>
-        <p>Rotating detonation combustion is being developed for next-generation pressure-gain propulsion, including advanced ramjet and hypersonic systems. Unlike conventional combustors, an RDE sustains detonation waves that repeatedly travel around an annular chamber, creating intense high-frequency pressure and structural loading.</p>
+        <p>Rotating detonation combustion is being developed for next-generation pressure-gain propulsion. Unlike conventional combustors, an RDE sustains detonation waves that repeatedly travel around an annular chamber, creating intense high-frequency pressure and structural loading.</p>
         <p>This research is part of a GE Aerospace-supported effort at UC's Gas Dynamics and Propulsion Laboratory. My work focuses on measuring how the combustor structure responds to that environment, using strain, vibration, pressure correlation, modal analysis, and high-speed signal processing. Understanding that structural response is important as rotating-detonation technology moves from laboratory combustors toward practical propulsion systems.</p>
-        <div class="result" style="margin-top:1.25rem">
-          <span class="tag" style="display:inline-block;margin-bottom:.7rem">Industry context</span>
-          <p style="font-size:.85rem;line-height:1.6;margin-bottom:.6rem">GE Aerospace reports that rotating detonation combustion can improve thrust and fuel efficiency, reduce engine size and weight, and allow ramjet ignition at lower speeds, potentially permitting smaller boosters.</p>
-          <ul style="list-style:none;display:flex;flex-direction:column;gap:.45rem;font-size:.85rem;line-height:1.5">
-            <li><a href="https://www.geaerospace.com/news/press-releases/other-news-information/ge-aerospace-demonstrates-hypersonic-dual-mode-ramjet" target="_blank" rel="noopener">GE Aerospace Demonstrates Hypersonic Dual-Mode Ramjet with Rotating Detonation Combustion ↗</a> <span style="color:var(--dim);font-family:var(--mono);font-size:.75rem;white-space:nowrap">· Dec 2023</span></li>
-            <li><a href="https://www.geaerospace.com/news/press-releases/ge-aerospace-and-lockheed-martin-demonstrate-rotating-detonation-ramjet-hypersonic" target="_blank" rel="noopener">GE Aerospace and Lockheed Martin Demonstrate Rotating Detonation Ramjet for Hypersonic Missiles ↗</a> <span style="color:var(--dim);font-family:var(--mono);font-size:.75rem;white-space:nowrap">· Jan 2026</span></li>
-          </ul>
-        </div>
 
         <h3>Approach</h3>
         <p>I engineered a custom strain-measurement system for about $140 and ran modal FEA in SolidWorks to predict combustor natural frequencies and expected FFT peaks before testing. I then built a Python pipeline that converts 1 MHz strain-gauge data to microstrain, applies a Chebyshev Type II low-pass filter, and generates time-frequency spectrograms to compare structural response with chamber pressure.</p>
