@@ -50,11 +50,14 @@
         <p>A 7-inch-class quadcopter that can carry swappable payloads, such as a camera, lidar, or environmental sensors, for different missions. It also has to stay easy to work on. Propulsion, a 6S battery, flight electronics, and a companion computer all have to fit in one fuselage without sacrificing structural integrity, cooling, component retention, or center of gravity.</p>
 
         <h3>Design</h3>
-        <p>I own the mechanical architecture and structural design. The airframe uses a printed cylindrical fuselage with four bolt-on motor arms. The electronics mount to a separate sled that slides into the fuselage, so the whole avionics stack can come out for servicing instead of being rewired in place. A vented end cap lets air through to cool the electronics.</p>
+        <p>I own the mechanical architecture and structural design. The airframe uses a printed cylindrical fuselage with four bolt-on motor arms. The electronics mount to a separate sled that slides into the fuselage, so the whole avionics stack can come out for servicing instead of being rewired in place. The idea came from the removable avionics bays used in high-power rocketry, like the sled on <a href="../rocket/" style="color:var(--text);text-decoration:underline;text-decoration-color:var(--rule)">UC Rocketry's two-stage rocket</a>. A vented end cap lets air through to cool the electronics.</p>
         <p>Every joint uses heat-set threaded inserts rather than screws driven straight into plastic, so parts can be taken apart and reassembled repeatedly during iteration without stripping.</p>
 
         <h3>Software &amp; Autonomy</h3>
         <p>Yash leads the software: a Raspberry Pi companion computer running ROS 2 alongside an ArduPilot flight controller, with telemetry, health monitoring, a hot-pluggable payload system, and a web dashboard. The flight controller stays in charge of flight safety. More on the software side at <a href="https://itsyashk.github.io/" target="_blank" rel="noopener" style="color:var(--text);text-decoration:underline;text-decoration-color:var(--rule)">itsyashk.github.io</a>.</p>
+
+        <h3>Design to Reality</h3>
+        <p>The first printed arms wouldn't seat in the fuselage sockets. I had modeled the joint as a zero-clearance friction fit, but FDM-printed PETG comes out slightly oversized on outer surfaces and undersized in holes, so the real fit was far tighter than in CAD. Opening the socket diameter by 0.2 mm fixed it, and I now build clearance into printed joints from the start instead of modeling parts at nominal size.</p>
 
         <h3>Where It's At</h3>
         <p>The drone has completed its first successful hover test. On the mechanical side, the next revision is built around the removable, serviceable avionics bay shown here, using lessons from packaging the electronics in the first build. The parts are modeled in Fusion 360, and the full assembly is in progress.</p>
