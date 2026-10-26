@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../style.css?v=2026-10-01">
+  <link rel="stylesheet" href="../../style.css?v=2026-10-26">
 </head>
 <body>
   <nav>
@@ -42,25 +42,38 @@
   <section id="uav" class="case">
     <div class="case-meta"><span class="tag">Collaborative Project</span><span class="tag">Mechanical Design</span><span class="meta-date">2026 – Present</span></div>
     <h2 class="case-title">Autonomous Multipurpose UAV</h2>
-    <p class="case-summary">A modular quadcopter I'm co-developing with <a href="https://itsyashk.github.io/" target="_blank" rel="noopener">Yash Kakade</a>, designed in Fusion 360 and built through rapid PETG prototyping, with a cylindrical fuselage and a removable avionics bay.</p>
+    <p class="case-summary">A low-cost, modular quadcopter I'm co-developing with Yash Kakade, built to carry different payloads for different missions, including demining. Designed in Fusion 360 and built through rapid PETG prototyping, with a cylindrical fuselage and a removable avionics bay.</p>
 
     <div class="case-grid">
       <div class="case-main">
         <h3>The Goal</h3>
-        <p>A 7-inch-class quadcopter that can carry swappable payloads, such as a camera, lidar, or environmental sensors, for different missions. It also has to stay easy to work on. Propulsion, a 6S battery, flight electronics, and a companion computer all have to fit in one fuselage without sacrificing structural integrity, cooling, component retention, or center of gravity.</p>
+        <p>A 7-inch-class quadcopter that can take on different missions by swapping its payload, while staying cheap enough to lose and easy to build and work on. Propulsion, a 6S battery, flight electronics, and a companion computer all have to fit in one fuselage without sacrificing structural integrity, cooling, component retention, or center of gravity.</p>
+
+        <h3>One Mission: How Much Should It Cost to Keep a Person Off a Minefield?</h3>
+        <p>A landmine costs a few dollars to make. The UN estimates that clearing one by hand costs around $1,000, and the person doing it is at risk the whole time. For humanitarian and military demining, this drone is built to be lost: for under $400, it flies to a mine and detonates it in place, so the drone takes the risk instead of a person.</p>
+        <p>Given the general area of a minefield, it uses computer vision and a reinforcement-learning policy to find a mine and guide itself onto it in closed loop. Every structural part is 3D printed and the electronics are off the shelf, so losing one means printing and assembling the next.</p>
 
         <h3>Design</h3>
         <p>I own the mechanical architecture and structural design. The airframe uses a printed cylindrical fuselage with four bolt-on motor arms. The electronics mount to a separate sled that slides into the fuselage, so the whole avionics stack can come out for servicing instead of being rewired in place. The idea came from the removable avionics bays used in high-power rocketry, like the sled on <a href="../rocket/" style="color:var(--text);text-decoration:underline;text-decoration-color:var(--rule)">UC Rocketry's two-stage rocket</a>. A vented end cap lets air through to cool the electronics.</p>
         <p>Every joint uses heat-set threaded inserts rather than screws driven straight into plastic, so parts can be taken apart and reassembled repeatedly during iteration without stripping.</p>
+        <p>The motor wires connect through soldered-on gold bullet connectors instead of being hard-wired. A failed motor can be unplugged and swapped quickly, and the motors can be disconnected so the avionics sled slides completely out of the fuselage.</p>
 
         <h3>Software &amp; Autonomy</h3>
-        <p>Yash leads the software: a Raspberry Pi companion computer running ROS 2 alongside an ArduPilot flight controller, with telemetry, health monitoring, a hot-pluggable payload system, and a web dashboard. The flight controller stays in charge of flight safety. More on the software side at <a href="https://itsyashk.github.io/" target="_blank" rel="noopener" style="color:var(--text);text-decoration:underline;text-decoration-color:var(--rule)">itsyashk.github.io</a>.</p>
+        <p>Yash leads the software: a Raspberry Pi companion computer running ROS 2 alongside an ArduPilot flight controller, with telemetry, health monitoring, a hot-pluggable payload system, and a web dashboard. The computer-vision and reinforcement-learning guidance is in development. The flight controller stays in charge of flight safety.</p>
 
         <h3>Design to Reality</h3>
         <p>The first printed arms wouldn't seat in the fuselage sockets. I had modeled the joint as a zero-clearance friction fit, but FDM-printed PETG comes out slightly oversized on outer surfaces and undersized in holes, so the real fit was far tighter than in CAD. Opening the socket diameter by 0.2 mm fixed it, and I now build clearance into printed joints from the start instead of modeling parts at nominal size.</p>
 
+        <h3>V1 to V2</h3>
+        <p>Everything pictured on this page is V1. Before V1, the prototype motor arms used a rectangular cross-section; V1 moved to the tubular arms shown here. V2 is being modeled in Fusion 360 now, with a new chassis and fuselage tube:</p>
+        <ul>
+          <li><strong>Swappable payload mount</strong> underneath the fuselage, so a camera, lidar, or sensor package can be changed per mission.</li>
+          <li><strong>More air vents</strong> in the fuselage for better electronics cooling.</li>
+          <li><strong>Smaller chassis</strong> built around a smaller Pi battery: 10,000 mAh at 225 g down to 5,000 mAh at 100 g. The Pi doesn't draw enough power to need the larger pack, since the main flight battery runs out first.</li>
+        </ul>
+
         <h3>Where It's At</h3>
-        <p>The drone has completed its first successful hover test. On the mechanical side, the next revision is built around the removable, serviceable avionics bay shown here, using lessons from packaging the electronics in the first build. The parts are modeled in Fusion 360, and the full assembly is in progress.</p>
+        <p>V1 has completed its first successful hover test. V2 CAD is in progress.</p>
 
         <h3>Build Specs</h3>
         <div class="results">
@@ -75,18 +88,18 @@
         </div>
       </div>
       <aside class="case-side">
-        <figure><img src="../../images/uav-sled-in-fuselage-cad.png" alt="Fusion 360 model: avionics sled installed inside the cylindrical fuselage, seen through the open end"><figcaption>The removable avionics bay: sled installed in the fuselage (Fusion 360).</figcaption></figure>
-        <figure><img src="../../images/uav-sled-cad.png" alt="Fusion 360 model of the avionics sled with slotted side walls, a mounting plate on top and a rail profile along the base"><figcaption>Avionics sled: slotted side walls act as rails, with a mounting plate for the flight electronics on top.</figcaption></figure>
-        <figure><img src="../../images/uav-fuselage-cad.png" alt="Fusion 360 model of the cylindrical fuselage with arm sockets and a spoked, vented end cap"><figcaption>Fuselage with motor-arm sockets and a vented end cap for cooling.</figcaption></figure>
-        <figure><img src="../../images/uav-arm-cad.png" alt="Fusion 360 model of a drone motor arm: tubular arm with a curved motor mount, motor and three-blade prop installed"><figcaption>Motor arm I designed in Fusion 360. Motor and prop are reference models for fit (assembly in progress).</figcaption></figure>
+        <figure><img src="../../images/uav-sled-in-fuselage-cad.png" alt="Fusion 360 model: avionics sled installed inside the cylindrical fuselage, seen through the open end"><figcaption>V1 removable avionics bay: sled installed in the fuselage (Fusion 360).</figcaption></figure>
+        <figure><img src="../../images/uav-sled-cad.png" alt="Fusion 360 model of the avionics sled with slotted side walls, a mounting plate on top and three slide rails underneath"><figcaption>V1 avionics sled: it slides into the fuselage on three rails underneath, with a mounting plate for the flight electronics on top.</figcaption></figure>
+        <figure><img src="../../images/uav-fuselage-cad.png" alt="Fusion 360 model of the cylindrical fuselage with arm sockets and a spoked, vented end cap"><figcaption>V1 fuselage with motor-arm sockets and a vented end cap for cooling.</figcaption></figure>
+        <figure><img src="../../images/uav-arm-cad.png" alt="Fusion 360 model of a drone motor arm: tubular arm with a curved motor mount, motor and three-blade prop installed"><figcaption>V1 motor arm I designed in Fusion 360. Motor and prop are reference models for fit (assembly in progress).</figcaption></figure>
       </aside>
     </div>
 
     <div class="gallery">
-        <figure><img src="../../images/uav-avionics-sled.jpg" alt="Avionics sled with flight controller stack and onboard computer"><figcaption>Avionics sled: flight controller stack and onboard computer on a printed mount.</figcaption></figure>
-        <figure><img src="../../images/uav-avionics-insert.jpg" alt="Avionics sled sliding into the cylindrical fuselage"><figcaption>Sled sliding into the fuselage for integration.</figcaption></figure>
-      <figure><img src="../../images/uav-overview.jpg" alt="Top view of the airframe beside its electronics"><figcaption>Airframe and electronics laid out before integration.</figcaption></figure>
-      <figure><img src="../../images/uav-arms-motors.jpg" alt="Three printed motor arms with motors mounted"><figcaption>Printed motor arms with motors installed and wiring routed internally.</figcaption></figure>
+        <figure><img src="../../images/uav-avionics-sled.jpg" alt="Avionics sled with flight controller stack and onboard computer"><figcaption>V1 avionics sled: flight controller stack and onboard computer on a printed mount.</figcaption></figure>
+        <figure><img src="../../images/uav-avionics-insert.jpg" alt="Avionics sled sliding into the cylindrical fuselage"><figcaption>V1 sled sliding into the fuselage for integration.</figcaption></figure>
+      <figure><img src="../../images/uav-overview.jpg" alt="Top view of the airframe beside its electronics"><figcaption>V1 airframe and electronics laid out before integration.</figcaption></figure>
+      <figure><img src="../../images/uav-arms-motors.jpg" alt="Three printed motor arms with motors mounted"><figcaption>V1 printed motor arms with motors installed and wiring routed internally.</figcaption></figure>
     </div>
   </section>
 

@@ -107,6 +107,10 @@ h2.case-title::after { display: none; }
 .case-main p { color: var(--muted); font-size: .97rem; line-height: 1.8; }
 .case-main p + p { margin-top: 1rem; }
 .case-main a { color: var(--text); text-decoration: underline; text-decoration-color: var(--rule); }
+.case-main ul { list-style: none; display: flex; flex-direction: column; gap: .6rem; margin-top: 1rem; }
+.case-main li { color: var(--muted); font-size: .97rem; line-height: 1.7; padding-left: 1.1rem; position: relative; }
+.case-main li::before { content: ""; position: absolute; left: 0; top: .65em; width: 6px; height: 6px; background: var(--accent); border-radius: 1px; }
+.case-main li strong { color: var(--text); font-weight: 600; }
 .results { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
 .result { padding: 1.25rem; border-radius: .75rem; border: 1px solid var(--border); background: var(--card); }
 .result strong { display: block; font-family: var(--mono); font-size: 1.45rem; font-weight: 600; color: var(--accent); margin-bottom: .25rem; }
