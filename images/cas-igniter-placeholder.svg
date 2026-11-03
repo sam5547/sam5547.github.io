@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" font-family="IBM Plex Mono, Consolas, monospace">
+  <!-- Placeholder concept sketch of the CAS spark igniter; replace with a real render or photo -->
+  <defs>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="#2e2c27"/>
+    </pattern>
+    <linearGradient id="flame" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#fff1d6"/>
+      <stop offset="0.25" stop-color="#f0803c"/>
+      <stop offset="1" stop-color="#f0803c" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="#141311"/>
+  <rect width="400" height="300" fill="url(#grid)"/>
+
+  <g stroke="#b7b2a7" stroke-width="2.5" fill="#1c1b18" stroke-linejoin="round">
+    <!-- GCH4 port (top) -->
+    <rect x="193" y="78" width="16" height="40"/>
+    <!-- GOX port (bottom) -->
+    <rect x="193" y="176" width="16" height="40"/>
+    <!-- spark plug: terminal, insulator, hex -->
+    <rect x="124" y="44" width="8" height="12"/>
+    <rect x="119" y="56" width="18" height="30" rx="3"/>
+    <rect x="111" y="86" width="34" height="30" rx="2"/>
+    <!-- igniter body -->
+    <rect x="90" y="116" width="170" height="62" rx="6"/>
+    <!-- threaded outlet -->
+    <rect x="260" y="128" width="30" height="38"/>
+  </g>
+
+  <!-- bore and outlet threads -->
+  <g stroke="#8a8478" stroke-width="1.5" fill="none">
+    <line x1="100" y1="133" x2="290" y2="133" stroke-dasharray="6 5"/>
+    <line x1="100" y1="161" x2="290" y2="161" stroke-dasharray="6 5"/>
+    <path d="M266 128v38M272 128v38M278 128v38M284 128v38"/>
+  </g>
+
+  <!-- spark and flame -->
+  <path d="M128 118l6 8-7 3 8 9" stroke="#f0803c" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M290 133 C320 128 350 136 384 147 C350 158 320 166 290 161 Z" fill="url(#flame)"/>
+
+  <!-- labels -->
+  <g fill="#b7b2a7" font-size="15" font-weight="500">
+    <text x="217" y="94">GCH4</text>
+    <text x="217" y="208">GOX</text>
+  </g>
+  <text x="200" y="256" text-anchor="middle" fill="#8a8478" font-size="15" letter-spacing="2">IMAGE COMING SOON</text>
+</svg>
